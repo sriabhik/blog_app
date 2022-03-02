@@ -1,0 +1,84 @@
+<app-navbar></app-navbar>
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class ="row">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                    <div class ="container text-center ">
+                        <img class="mt20" style ="height: 100px; width: 300px;"src="../../../assets/logo.png" alt="image.png">
+                    </div>
+                    <h1 class="text-center"><strong>Register Here</strong></h1>
+                    <!-- {{user|json}} -->
+                    <form (ngSubmit)="formSubmit()">
+                        <mat-form-field class ="full-width" appearance="outline">
+                            <mat-label>Enter admin/customer</mat-label>
+                            <input required type="text" [(ngModel)]="user.userRole" 
+                            name="userRole" 
+                            matInput placeholder="Enter admin/customer">
+                            
+                        </mat-form-field>
+                        <!-- email field -->
+                        <mat-form-field class ="full-width" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input required type="email" [(ngModel)]="user.email"
+                            [(ngModel)]="user.username" 
+                            name="email" 
+                            matInput placeholder="Enter Email">    
+                        </mat-form-field>
+                        
+                        <!-- name field -->
+                        <mat-form-field class ="full-width" appearance="outline">
+                            <mat-label>Enter Name</mat-label>
+                            <input required  type="text" 
+                            [(ngModel)]="user.name"
+                            name ="name"
+                            matInput placeholder="Enter Name">
+                           
+                        </mat-form-field>
+                            <!-- phone field -->
+                        <mat-form-field class ="full-width" appearance="outline">
+                            <mat-label>mobileNumber</mat-label>
+                            <input required  type ="number" 
+                            [(ngModel)]="user.mobileNumber"
+                            name ="mobileNumber"
+                            matInput placeholder="Enter mobileNumber">
+                        </mat-form-field>
+
+                        <!-- password field -->
+                        <mat-form-field class ="full-width" appearance="outline">
+                            <mat-label>User Password</mat-label>
+                            <input required type="password"  
+                            [(ngModel)]="user.password"
+                            name ="password"
+                            matInput placeholder="Password">
+                           
+                          </mat-form-field>
+    
+                        
+                        <!-- password field -->
+                        <mat-form-field class ="full-width" appearance="outline">
+                            <mat-label>Confirm Password</mat-label>
+                            <input required type= "password"  
+                            [(ngModel)]="user.confirmPassword"
+                            name ="confirmPassword"
+                            matInput placeholder="Confirm Password">
+                           
+                        </mat-form-field>
+                       
+                          <div class="container text-center">
+                              <button type="submit" mat-raised-button color="primary">Register</button>
+                              <span class="ml10">Already a user ?</span>
+                              <a  
+                                  [routerLink]="''"
+                              >
+                              <span class="ml10">Login</span>
+                          </a>
+                          </div>
+                    </form>
+                </mat-card>
+                
+            </div>
+        </div>
+    </div>
+
+</div>

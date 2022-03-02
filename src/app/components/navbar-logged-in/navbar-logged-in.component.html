@@ -1,0 +1,36 @@
+<mat-toolbar color="warn">
+    <a  href=""
+        routerLink="/"
+        mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>admin_panel_settings</mat-icon>
+    </a>
+    <span>Spinning blades</span>
+    <!-- <span class="example-spacer"></span> -->
+
+    <a  
+    routerLink="/"
+    mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    </a>
+    <span>Add Center</span>
+    <!-- <span class="example-spacer"></span> -->
+
+    <a 
+    routerLink="/"
+    mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    </a>
+    <span>Center Profile</span>
+    
+
+    <span class="example-spacer"></span>
+    <!-- for logout -->
+     <a (click)="logout()"
+           
+        *ngIf="isLoggedIn"
+        mat-icon-button class="example-icon favorite-icon mr20 ml20" 
+        aria-label="Example icon-button with heart icon">
+        Logout
+    </a>
+   
+
+    
+</mat-toolbar>

@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<div class="bootstrap-wrapper mt20">
+    <div class="container">
+        <div class ="row">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>   
+                    <div class ="container ">
+                        <img class="center" style ="height: 150px; width: 300px;"src="../../../assets/login.png" alt="image.png">
+                    </div>
+                    <h1 class="text-center"><strong>Login Here</strong></h1>
+                   
+                    <form (ngSubmit)="formSubmit()">
+                        <!-- userEmail field -->
+                        <mat-form-field class ="full-width" appearance="outline">
+                            <mat-label>User Email</mat-label>
+                            <input 
+                                [(ngModel)]="LoginData.email"
+                                required type="email" 
+                                name="email" 
+                                matInput placeholder="Enter Email">
+                          
+                        
+                        </mat-form-field>
+                        
+                        <!-- password field -->
+                        <mat-form-field class ="full-width" appearance="outline">
+                            <mat-label>User Password</mat-label>
+                            <input 
+                                [(ngModel)]="LoginData.password"
+                                required type= "password"   
+                                name ="password"
+                                matInput placeholder="Enter Password">
+                        </mat-form-field>
+
+                        <div class="container text-center">
+                            <button type="submit" mat-raised-button color="primary">Login</button>
+                            <span class="ml10">New User ?</span>
+                            <a  
+                                [routerLink]="'/signup'"
+                            >
+                            <span class="ml10">Sign Up</span>
+                        </a>
+                        </div>
+                    </form>
+                </mat-card> 
+            </div>
+        </div>
+    </div>
+</div>
