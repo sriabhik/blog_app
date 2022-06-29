@@ -5,11 +5,19 @@ import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.blogapplication.entities.Category;
+import com.blogapplication.entities.Post;
 import com.blogapplication.exceptions.ResourceNotFoundException;
 import com.blogapplication.payloads.CategoryDto;
+import com.blogapplication.payloads.CategoryResponse;
+import com.blogapplication.payloads.PostDto;
+import com.blogapplication.payloads.PostResponse;
 import com.blogapplication.repositories.CategoryRepo;
 import com.blogapplication.services.CategoryService;
 
@@ -53,10 +61,28 @@ public class CategoryServiceImpl implements CategoryService {
 	}
 
 	@Override
-	public List<CategoryDto> getAllCategory() {
-		List<Category>  categories= this.categoryRepo.findAll();
-		List<CategoryDto> catDtos =  categories.stream().map((cat)->this.modelMapper.map(cat, CategoryDto.class)).collect(Collectors.toList());
-		return catDtos;
+	public CategoryResponse getAllCategory(Integer pageNumber,Integer pageSize,String sortBy,String sortDir) {
+		Sort sort = null;
+		if(sortDir.equalsIgnoreCase("asc")) {
+			sort = Sort.by(sortBy).ascending();
+			
+		}
+		else {
+			sort = Sort.by(sortBy).descending();
+		}
+		Pageable p1 =  PageRequest.of(pageNumber,pageSize,sort);
+		Page<Category> pageCategory = this.categoryRepo.findAll(p1);
+		List<Category> category = pageCategory.getContent();
+		List<CategoryDto> categoryDtos = category.stream().map((p)->this.modelMapper.map(p, CategoryDto.class)).collect(Collectors.toList());
+		CategoryResponse categoryResponse= new CategoryResponse();
+		categoryResponse.setContent(categoryDtos);
+		categoryResponse.setPageNumber(pageCategory.getNumber());
+		categoryResponse.setPageSize(pageCategory.getSize());
+		categoryResponse.setTotalElements(pageCategory.getTotalElements());
+		categoryResponse.setTotalPages(pageCategory.getTotalPages());
+		categoryResponse.setLastPage(pageCategory.isLast());
+		return categoryResponse;
+		
 	}
 
 }

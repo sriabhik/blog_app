@@ -3,6 +3,7 @@ package com.blogapplication.services;
 import java.util.List;
 
 import com.blogapplication.payloads.CategoryDto;
+import com.blogapplication.payloads.CategoryResponse;
 
 public interface CategoryService {
 
@@ -14,7 +15,7 @@ public interface CategoryService {
 	 
 	 CategoryDto getCategory(Integer categoryId);
 	 
-	 List<CategoryDto> getAllCategory();
+	 CategoryResponse getAllCategory(Integer pageNumber,Integer pageSize,String sortBy,String sortDir);
 	
 	
 	

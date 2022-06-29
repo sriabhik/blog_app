@@ -27,6 +27,4 @@ public interface PostService {
 	
 	//Search Posts
 	List<PostDto> searchPosts(String keyword);
-	
-	
 }

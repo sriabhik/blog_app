@@ -5,90 +5,138 @@ import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.blogapplication.config.AppConstants;
+import com.blogapplication.entities.Post;
+import com.blogapplication.entities.Role;
 import com.blogapplication.entities.User;
+import com.blogapplication.exceptions.ResourceNotFoundException;
 import com.blogapplication.payloads.UserDto;
+import com.blogapplication.payloads.UserResponse;
+import com.blogapplication.repositories.RoleRepo;
 import com.blogapplication.repositories.UserRepo;
 import com.blogapplication.services.UserService;
-import com.blogapplication.exceptions.*;
 
 @Service
 public class UserServiceImpl implements UserService {
-	
+
 	@Autowired
 	private UserRepo userRepo;
-//	Bean declare in blogapplication.java ,change manual code downbelow userToDto and dtoToUser
+
 	@Autowired
 	private ModelMapper modelMapper;
+
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+
+	@Autowired
+	private RoleRepo roleRepo;
+
 	@Override
 	public UserDto createUser(UserDto userDto) {
 		User user = this.dtoToUser(userDto);
-		User savedUser  = this.userRepo.save(user);
+		User savedUser = this.userRepo.save(user);
 		return this.userToDto(savedUser);
 	}
 
-//	using lamda and custom exception
 	@Override
 	public UserDto updateUser(UserDto userDto, Integer userId) {
-		User user = this.userRepo.findById(userId).orElseThrow((() -> new ResourceNotFoundException("User","id",userId)));
-		
+
+		User user = this.userRepo.findById(userId)
+				.orElseThrow(() -> new ResourceNotFoundException("User", " Id ", userId));
+
 		user.setName(userDto.getName());
 		user.setEmail(userDto.getEmail());
+		user.setPassword((userDto.getPassword()));
 		user.setAbout(userDto.getAbout());
-		user.setPassword(userDto.getPassword());
+
 		User updatedUser = this.userRepo.save(user);
-		return this.userToDto(updatedUser);
+		UserDto userDto1 = this.userToDto(updatedUser);
+		return userDto1;
 	}
 
 	@Override
 	public UserDto getUserById(Integer userId) {
-	
-		User user = this.userRepo.findById(userId).orElseThrow((() -> new ResourceNotFoundException("User","id",userId)));
+
+		User user = this.userRepo.findById(userId)
+				.orElseThrow(() -> new ResourceNotFoundException("User", " Id ", userId));
+
 		return this.userToDto(user);
 	}
 
 	@Override
-	public List<UserDto> getAllUsers() {
-		List<User> users = this.userRepo.findAll();
-		List<UserDto> userDtos = users.stream().map(user->this.userToDto(user)).collect(Collectors.toList());
-		return userDtos;
+	public UserResponse getAllUsers(Integer pageNumber,Integer pageSize,String sortBy,String sortDir) {
+		Sort sort = null;
+		if(sortDir.equalsIgnoreCase("asc")) {
+			sort = Sort.by(sortBy).ascending();
+			
+		}
+		else {
+			sort = Sort.by(sortBy).descending();
+		}
+		Pageable p1 =  PageRequest.of(pageNumber,pageSize,sort);
+		Page<User> pageUser = this.userRepo.findAll(p1);
+		List<User> user = pageUser.getContent();
+	
+		List<UserDto> userDtos = user.stream().map(u -> this.userToDto(u)).collect(Collectors.toList());
+		UserResponse userResponse = new UserResponse();
+		userResponse.setContent(userDtos);
+		userResponse.setPageNumber(pageUser.getNumber());
+		userResponse.setPageSize(pageUser.getSize());
+		userResponse.setTotalElements(pageUser.getTotalElements());
+		userResponse.setTotalPages(pageUser.getTotalPages());
+		userResponse.setLastPage(pageUser.isLast());
+		
+		return userResponse;
 	}
 
 	@Override
 	public void deleteUser(Integer userId) {
-		User user = this.userRepo.findById(userId).orElseThrow((() -> new ResourceNotFoundException("User","id",userId)));
+		User user = this.userRepo.findById(userId)
+				.orElseThrow(() -> new ResourceNotFoundException("User", "Id", userId));
 		this.userRepo.delete(user);
 
 	}
-	
-	
-	
-	
-//	making user object from userdto
+
 	public User dtoToUser(UserDto userDto) {
-//		User user = new User();
-//		user.setId(userDto.getId());
-//		user.setName(userDto.getName());
-//		user.setEmail(userDto.getEmail());
-//		user.setAbout(userDto.getAbout());
-//		user.setPassword(userDto.getPassword());
-//		return user;
 		User user = this.modelMapper.map(userDto, User.class);
+
+		// user.setId(userDto.getId());
+		// user.setName(userDto.getName());
+		// user.setEmail(userDto.getEmail());
+		// user.setAbout(userDto.getAbout());
+		// user.setPassword(userDto.getPassword());
 		return user;
 	}
 
-//	making userDto object from user
 	public UserDto userToDto(User user) {
-//		UserDto userDto = new UserDto();
-//		userDto.setId(user.getId());
-//		userDto.setName(user.getName());
-//		userDto.setEmail(user.getEmail());
-//		userDto.setAbout(user.getAbout());
-//		userDto.setPassword(user.getPassword());
-//		return userDto;
 		UserDto userDto = this.modelMapper.map(user, UserDto.class);
 		return userDto;
+	}
+
+	@Override
+	public UserDto registerNewUser(UserDto userDto) {
+		System.out.println("userImpl");
+		User user = this.modelMapper.map(userDto, User.class);
+
+		// encoded the password
+		user.setPassword(this.passwordEncoder.encode(user.getPassword()));
+
+		// roles
+		Role role = this.roleRepo.findById(AppConstants.NORMAL_USER).get();
+
+		user.getRoles().add(role);
+
+		User newUser = this.userRepo.save(user);
+
+		
+		return this.modelMapper.map(newUser, UserDto.class);
 	}
 
 }

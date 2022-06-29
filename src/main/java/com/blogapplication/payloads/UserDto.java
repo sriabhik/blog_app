@@ -1,10 +1,15 @@
 package com.blogapplication.payloads;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import com.blogapplication.entities.Role;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,8 +29,9 @@ public class UserDto {
 	@Email(message ="Email address is not valid !!")
 	private String email;
 	@NotEmpty
-	@Size(min = 5 ,max = 15 , message = "Password must be of length >=5 and <= 15")
+	@Size(min = 5 ,max = 100 , message = "Password must be of length >=5 and <= 100")
 	private String password;
 	@NotEmpty
 	private String about;
+	private Set<RoleDto> roles = new HashSet<>();
 }
