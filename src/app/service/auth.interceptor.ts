@@ -18,6 +18,7 @@ export class AuthInterceptor implements HttpInterceptor{
         console.log("Inside Inceptor");
         
         if(token != null || token != ''){
+            console.log({token});
             authReq=authReq.clone({
                 setHeaders:{Authorization: `Bearer ${token}`},
         })

@@ -1,0 +1,54 @@
+<div class="bootstrap-wrapper mt50 ml50">
+    <div class="container-fluid">
+        <div class="row">
+           
+            <div class="col-md-12">
+                <mat-card>
+                  
+                    <h1 class="center font"> Add Category</h1>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 offset-md-2">
+                                <!-- {{Category | json}} -->
+                                <form (ngSubmit)="formSubmit()">
+                                    <mat-form-field class ="w100" appearance="outline">
+                                        <mat-label>Enter Category</mat-label>
+                                        <input 
+                                            type = "text" 
+                                            name="title" 
+                                            placeholder="Title" 
+                                            matInput
+                                            [(ngModel)]="Category.categoryTitle"
+                                           >
+                                    </mat-form-field>
+                                    <!-- model Number -->
+                                  
+                                    <mat-form-field class ="w100" appearance="outline">
+                                        <mat-label>Enter Description</mat-label>
+                                        <input 
+                                            type = "text" 
+                                            name="description" 
+                                            placeholder="Description" 
+                                            matInput
+                                            [(ngModel)]="Category.categoryDescription"
+                                           >
+                                    </mat-form-field>
+                                        
+                                
+                                    
+                                        
+                                        <!-- adding button -->
+                                        
+                                        <div class="container text-center mt10">
+                                            <button mat-raised-button color="accent">Add Category</button>
+                                            <button  class="ml10" mat-raised-button color="accent" [routerLink]="'/admin/allPost'">Cancel</button>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

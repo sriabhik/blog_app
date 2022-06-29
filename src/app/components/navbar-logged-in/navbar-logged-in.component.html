@@ -1,36 +1,28 @@
-<mat-toolbar color="warn">
-    <a  href=""
-        routerLink="/"
-        mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>admin_panel_settings</mat-icon>
-    </a>
-    <span>Spinning blades</span>
-    <!-- <span class="example-spacer"></span> -->
+<mat-toolbar color="accent">
 
-    <a  
-    routerLink="/"
-    mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    </a>
-    <span>Add Center</span>
-    <!-- <span class="example-spacer"></span> -->
+    <button mat-button routerLink="/">
+    <mat-icon>home</mat-icon> 
+    <span class="ml10" style=" margin-top:4px;font-size: 20px">Welcome</span></button>
+    <span class="fill-remaining-space"></span>
+    <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+        <button class="s" mat-menu-item routerLink="/admin/category">Category</button>
+        <button class="s" mat-menu-item routerLink="/admin/allPost">All post</button>
+        <button class="s" mat-menu-item routerLink="/admin/addCategory">Add category</button>
+        <button class="s" mat-menu-item routerLink="/admin/displayUser">Users</button>
+        <button class="s" mat-menu-item routerLink="">Logout
+        
+        </button>
+    </div>
+    <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+     <mat-icon>menu</mat-icon>
+    </button>
 
-    <a 
-    routerLink="/"
-    mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    </a>
-    <span>Center Profile</span>
-    
-
-    <span class="example-spacer"></span>
-    <!-- for logout -->
-     <a (click)="logout()"
-           
-        *ngIf="isLoggedIn"
-        mat-icon-button class="example-icon favorite-icon mr20 ml20" 
-        aria-label="Example icon-button with heart icon">
-        Logout
-    </a>
-   
-
-    
 </mat-toolbar>
+<mat-menu x-position="before" #menu="matMenu">
+    <button class="s" mat-menu-item routerLink="/admin/category">category</button>
+    <button class="s" mat-menu-item routerLink="/admin/allPost">All post</button>
+    <button class="s" mat-menu-item routerLink="/admin/addCategory">Add category</button>
+    <button class="s" mat-menu-item routerLink="/admin/displayUser">Users</button>
+    <button class="s" mat-menu-item routerLink="">logout</button>
+    <!--<button mat-menu-item>Help</button>-->
+</mat-menu>

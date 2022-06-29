@@ -1,0 +1,39 @@
+<div class="bootstrap-wrapper margin">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div *ngIf="categorys?.length != 0" >
+                    <div   *ngFor="let e of categorys | paginate: { itemsPerPage: pageSize, currentPage: p, totalItems: total }">
+   
+        
+                        <mat-card class = "mt10">
+                        
+                           <strong>Title : </strong> {{ e.categoryTitle }}
+                           <br /><br>
+                           <strong>Description : </strong> {{ e.categoryDescription }}
+                           <br /><br>
+                           
+                           <button mat-raised-button color="primary" style="margin-right: 15px" 
+                           [routerLink]="'/admin/postByCategory/'+e.categoryId">
+                              Get all article for this category
+                           </button>
+                           <button mat-raised-button color="warn" style="margin-right: 15px"
+                           (click)="delete(e.categoryId)">
+                             Delete category
+                            </button>
+                            <button class="mt10 ml10" mat-raised-button color="accent" style="margin-right: 15px">
+                                Update category
+                            </button>
+                         </mat-card>
+                       </div>
+                     <br>
+                     <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
+                </div>
+                </div>
+        </div>
+    </div>
+  </div>
+  <div class="container-fluid mt50"></div>
+  <div class="mt20" *ngIf="categorys?.length ==0">
+    <strong  class="font center">No Category added yet!!</strong>
+  </div>

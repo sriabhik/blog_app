@@ -1,0 +1,77 @@
+
+<div class="bootstrap-wrapper mt50">
+    <h1 class="center font"><strong>Update Details</strong></h1>
+    <div class="container">
+        <div class ="row">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                    
+                    <!-- {{user|json}} -->
+                    <form (ngSubmit)="formSubmit()">
+                        
+                        <!-- email field -->
+                        <mat-form-field class ="full-width" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <!-- email validator -->
+                            <input type = "email"  [(ngModel)]="user.email"
+                            name="email"  
+                            ngModel 
+                            email="true"
+                            #prmEmail="ngModel"
+                            matInput placeholder="Enter Email"> 
+                             
+                        </mat-form-field>
+                        <div *ngIf="prmEmail.errors?.['email']">
+                            <mat-hint>Enter a valid email address</mat-hint> 
+                        </div>
+                        <br>
+                        <!-- name field -->
+                        <mat-form-field class ="full-width" appearance="outline">
+                            <mat-label>Enter Name</mat-label>
+                            <input   type="text" 
+                            [(ngModel)]="user.name"
+                            name ="name"
+                            matInput placeholder="Enter Name">
+                           
+                        </mat-form-field>
+                        <mat-form-field class ="full-width" appearance="outline">
+                            <mat-label>About</mat-label>
+                            <textarea 
+                            type = "text" 
+                            name="about" 
+                            placeholder="Enter title" 
+                            matInput
+                            rows=3
+                            [(ngModel)]="user.about"
+                            ></textarea>
+                            <button *ngIf="user.about" matSuffix mat-icon-button aria-label="Clear" (click)="user.about=''">
+                              <mat-icon>close</mat-icon>
+                            </button>
+                          </mat-form-field>
+                        
+                        <!-- password field -->
+                        <!-- <mat-form-field class ="full-width" appearance="outline">
+                            <mat-label>User Password</mat-label>
+                            
+                            <input 
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            name="password"
+                            [(ngModel)]="userUpdate.password"
+                            matInput placeholder="Password">
+                            <mat-hint>1)minimum password length required is 8 <br>
+                                            2)Password must contains atleast one upperCase,oneLowerCase and one Digits</mat-hint>
+                    
+                          </mat-form-field> -->
+                          <div class="container text-center mt20">
+                              <button type="submit" mat-raised-button color="primary">Update</button>
+                              <button  class="ml10" mat-raised-button color="primary" routerLink="/admin/displayUser">Cancel</button>
+                              
+                            </div>
+                    </form>
+                </mat-card>
+                
+            </div>
+        </div>
+    </div>
+
+</div>

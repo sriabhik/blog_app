@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/user.service';
 
 interface datatype {
@@ -19,93 +19,80 @@ interface datatype {
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
+  public showPassword: 
+  boolean = false;
+  public showPassword2: 
+  boolean = false;
   public user={
-   
+    name:'',
     email:'',
-    username:'',
-    mobileNumber:'',
     password : '',
-    confirmPassword:'',
-    userRole:'',
-    name:''
+    about:''
+    
   }
-  constructor(private userService :UserService,private snack:MatSnackBar) { }
+  constructor(  private userService :UserService,
+                private snack:MatSnackBar,
+              
+                ) { } 
 
   ngOnInit(): void {
   }
   formSubmit(){
-    if((this.user.userRole!=='admin' && this.user.userRole!='customer') ){
-      this.snack.open("Enter admin/customer","Cancel",
-      {duration:2000})
-      this.f()
-        return;
-    }
-    if(this.user.username ==''||this.user.username==null){
-      this.snack.open("Username Required","Cancel",
-      {duration:2000})
-      this.f()
-        return;
-    }
+   
+  
     if(this.user.email==''||this.user.email==null){
       this.snack.open("Email Required","Cancel",
       {duration:2000})
-      this.f()
         return;
     }
-    if(this.user.mobileNumber ==''||this.user.mobileNumber==null){
-      this.snack.open("mobileNumber Required","Cancel",
+    if(!this.user.email.includes(".")){
+      this.snack.open("Invalid Email ","Cancel",
       {duration:2000})
-      
-      this.f()
         return;
     }
-    if(this.user.password ==''||this.user.password==null){
+    if(this.user.name ==''||this.user.name==null){
+      this.snack.open("Name Required","Cancel",
+      {duration:2000}) 
+        return;
+    }
+    
+    if( this.user.password ==''||this.user.password==null){
       this.snack.open("password Required","Cancel",
       {duration:2000})
-       this.f()
         return;
     }
-    if(this.user.confirmPassword ==''||this.user.confirmPassword==null){
-      this.snack.open("Enter Confirm password Required","Cancel",
+    if(this.user.password.length < 8 ){
+      this.snack.open("password  length should greater than  8 ","Cancel",
       {duration:2000})
-      this.f()
         return;
     }
-    if(this.user.confirmPassword == this.user.password){
-      this.userService.addUser(this.user,this.user.userRole).subscribe(
-        (data)=>{
-          //success
-        
-          this.snack.open("Registration Successfull","Cancel",{
-            duration:2000})
-          
-        },
-        (error)=>
-        {
-          //fail
-          console.log(error)
-          this.snack.open("User Already Registered Or  Try again","Cancel",{duration:2000,verticalPosition:'top',horizontalPosition:'left'})    
-        }
-      );
-    }
-    else{
+    this.userService.addUser(this.user).subscribe((data)=>{
+      this.snack.open("Successfully Register","Cancel",{duration:2000})
       this.f()
-      this.snack.open("password and confirmPassword mismatch","cancel",{duration:3000})
-      
-    }
+    },
+    (error)=>{
+      if(error.status==404){
+        this.snack.open("Email address already register","Cancel",{duration:2000})
+      }
+      else
+      this.snack.open("Something Went Wrong,Try Again","Cancel",{duration:2000})
+    })
     
   }
   f(){
     this.user={
    
       email:'',
-      username:'',
-      mobileNumber:'',
       password : '',
-      confirmPassword:'',
-      userRole:'',
+      about:'',
       name:''
     }
+  }
+ 
+  public togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
+  public togglePasswordVisibility1(): void {
+    this.showPassword2 = !this.showPassword2;
   }
 }

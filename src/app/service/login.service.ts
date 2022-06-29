@@ -14,13 +14,13 @@ export class LoginService {
   constructor(private http:HttpClient) { }
 //current user
 public getCurrentUser(){
-  return this.http.get(`${baseUrl}/current-user`);
+  return this.http.get(`${baseUrl}/api/auth/current-user`);
 }
   //generate token
-  public LoginData(loginData:any,role:any){
-    if(role=='admin')
-      return this.http.post(`${baseUrl}/admin/login`,loginData);
-    return this.http.post(`${baseUrl}/user/login`,loginData);
+  public LoginData(loginData:any){
+    // if(role=='admin')
+    //   return this.http.post(`${baseUrl}/admin/login`,loginData);
+    return this.http.post(`${baseUrl}/api/auth/login`,loginData);
   }
 
   //login user:set token user
@@ -69,7 +69,18 @@ public getCurrentUser(){
   //get user role
   public getUserRole(){
     let user = this.getUser()
-    return user.authorities[0].authority
+    return user.roles[0].name
   }
-  
+  //otp 
+  public sendEmail(emailData:any){
+    console.log(emailData)
+    return this.http.post(`${baseUrl}/sendEmail`,emailData);
+  }
+
+  public getUserByEmail(email:any){
+    return this.http.get(`${baseUrl}/getUserByEmail/${email}`)
+  }
+  public updateUser(data:any){
+    return this.http.put(`${baseUrl}/user/updateUser`,data);
+  }
 }

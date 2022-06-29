@@ -8,64 +8,66 @@
                         <img class="mt20" style ="height: 100px; width: 300px;"src="../../../assets/logo.png" alt="image.png">
                     </div>
                     <h1 class="text-center"><strong>Register Here</strong></h1>
-                    <!-- {{user|json}} -->
+                    {{user|json}}
                     <form (ngSubmit)="formSubmit()">
-                        <mat-form-field class ="full-width" appearance="outline">
-                            <mat-label>Enter admin/customer</mat-label>
-                            <input required type="text" [(ngModel)]="user.userRole" 
-                            name="userRole" 
-                            matInput placeholder="Enter admin/customer">
-                            
-                        </mat-form-field>
+                        
                         <!-- email field -->
                         <mat-form-field class ="full-width" appearance="outline">
                             <mat-label>Email</mat-label>
-                            <input required type="email" [(ngModel)]="user.email"
-                            [(ngModel)]="user.username" 
-                            name="email" 
-                            matInput placeholder="Enter Email">    
+                            <!-- email validator -->
+                            <input type = "email"  [(ngModel)]="user.email"
+                            name="email"  
+                            ngModel 
+                            email="true"
+                            #prmEmail="ngModel"
+                            matInput placeholder="Enter Email"> 
+                             
                         </mat-form-field>
-                        
+                        <div *ngIf="prmEmail.errors?.['email']">
+                            <mat-hint>Enter a valid email address</mat-hint> 
+                        </div>
+                        <br>
                         <!-- name field -->
                         <mat-form-field class ="full-width" appearance="outline">
                             <mat-label>Enter Name</mat-label>
-                            <input required  type="text" 
+                            <input   type="text" 
                             [(ngModel)]="user.name"
                             name ="name"
                             matInput placeholder="Enter Name">
                            
                         </mat-form-field>
-                            <!-- phone field -->
                         <mat-form-field class ="full-width" appearance="outline">
-                            <mat-label>mobileNumber</mat-label>
-                            <input required  type ="number" 
-                            [(ngModel)]="user.mobileNumber"
-                            name ="mobileNumber"
-                            matInput placeholder="Enter mobileNumber">
-                        </mat-form-field>
-
-                        <!-- password field -->
-                        <mat-form-field class ="full-width" appearance="outline">
-                            <mat-label>User Password</mat-label>
-                            <input required type="password"  
-                            [(ngModel)]="user.password"
-                            name ="password"
-                            matInput placeholder="Password">
-                           
+                            <mat-label>About</mat-label>
+                            <textarea 
+                            type = "text" 
+                            name="about" 
+                            placeholder="Enter about" 
+                            matInput
+                            rows=2
+                            [(ngModel)]="user.about"
+                            ></textarea>
                           </mat-form-field>
-    
                         
                         <!-- password field -->
                         <mat-form-field class ="full-width" appearance="outline">
-                            <mat-label>Confirm Password</mat-label>
-                            <input required type= "password"  
-                            [(ngModel)]="user.confirmPassword"
-                            name ="confirmPassword"
-                            matInput placeholder="Confirm Password">
-                           
-                        </mat-form-field>
+                            <mat-label>User Password</mat-label>
+                            
+                            <input 
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            matInput [type]="showPassword ? 'text' : 'password'" name="password" 
+                            [(ngModel)]="user.password"
+                            matInput placeholder="Password">
+                            <mat-hint class="font_small">1)minimum password length required is 8 <br>
+                                            2)Password must contains atleast one upperCase,oneLowerCase and one Digits</mat-hint>
+                            <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                                {{showPassword?'visibility_off':'visibility'}}
+                            </mat-icon>
+                          </mat-form-field>
+    
+                        
+                        
                        
-                          <div class="container text-center">
+                          <div class="container text-center mt20">
                               <button type="submit" mat-raised-button color="primary">Register</button>
                               <span class="ml10">Already a user ?</span>
                               <a  

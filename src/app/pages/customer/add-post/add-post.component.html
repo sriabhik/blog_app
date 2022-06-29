@@ -1,0 +1,49 @@
+<div class="bootstrap-wrapper mt50 ml50">
+    <div class="container-fluid">
+        <div class="row">
+           
+            <div class="col-md-12">
+                <mat-card>
+                  
+                    <h1 class="center font"> Write your words with love..</h1>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 offset-md-2">
+                                <!-- {{Category | json}} -->
+                                <form (ngSubmit)="formSubmit()">
+                                    <mat-form-field class ="w100" appearance="outline">
+                                        <mat-label>Enter Title</mat-label>
+                                        <input 
+                                            type = "text" 
+                                            name="title" 
+                                            placeholder="Title" 
+                                            matInput
+                                            [(ngModel)]="post.title"
+                                           >
+                                    </mat-form-field>
+                                    <!-- model Number -->
+                                  
+                                    <mat-form-field class ="w100" appearance="outline">
+                                        <mat-label>content</mat-label>
+                                            <textarea 
+                                            type = "text" 
+                                            name="content" 
+                                            placeholder="Enter content" 
+                                            matInput
+                                            rows=10
+                                            [(ngModel)]="post.content"
+                                            ></textarea>
+                                      </mat-form-field>
+                                    <div class="container text-center mt10">
+                                        <button type="submit" mat-raised-button color="accent">submit</button>
+                                        
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

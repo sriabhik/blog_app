@@ -1,0 +1,51 @@
+<div class="container-fluid"></div>
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 margin" >
+                <div class="mt20" *ngFor="let e of post ">
+   
+                    <mat-card>
+                         <p>Title</p>
+                        <mat-form-field class ="w100 font" appearance="outline">
+                          
+                            <input 
+                                class ="font"
+                                style="color:cornflowerblue"
+                                disabled="disabled"
+                                type = "text" 
+                                name="title" 
+                                placeholder="Title" 
+                                matInput
+                                [(ngModel)]="e.title"
+                            >
+                        </mat-form-field>
+                        <!-- model Number -->
+                        <p>Content</p>
+                        <mat-form-field class ="w100 font_r" appearance="outline">
+                            
+                                <textarea 
+                                class ="font"
+                                style="color:cornflowerblue"
+                                type = "text" 
+                                name="content"
+                                placeholder="Enter content" 
+                                matInput
+                                rows=3
+                                disabled="disabled"
+                                [(ngModel)]="e.content"
+                                ></textarea>
+                        </mat-form-field>
+                        <button mat-success class="button font_r" [routerLink]="'/customer/addComment/'+e.postId">comment</button>
+                        <button mat-raised-button color="primary" style="height:45px"class="ml10"
+                        [routerLink]="'/customer/allCommentUser/'+e.postId">view comments</button>
+                    </mat-card>
+            </div>
+         
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt50"></div>
+<div class="mt20" *ngIf="post?.length ==0">
+    <strong  class="font center">No Post found in this category!!</strong>
+  </div>

@@ -13,7 +13,7 @@ export class CustomerGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       console.log('customerguard');
       
-      if(this.login.isLoggedIn() && this.login.getUserRole()=='customer'){
+      if(this.login.isLoggedIn() && this.login.getUserRole()=='NORMAL'){
         console.log('success ');
         return true;
       }

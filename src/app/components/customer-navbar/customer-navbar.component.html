@@ -1,37 +1,25 @@
-<mat-toolbar color="warn">
-    <a  
-        routerLink="/"
-        mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>admin_panel_settings</mat-icon>
-    </a>
-    <span>Spinning blades</span>
-    
-    <!-- Home icon -->
-    <a  
-    routerLink="/"
-    mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    </a>
-    <span>Home </span>
-    
-    <!-- Dashboard Icon -->
-    <a 
-    routerLink="/"
-    mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    </a>
-    <span>Dashboard</span>
-    
-    <!-- MyBooking icon -->
-    <a  href=""
-    routerLink="/"
-    mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    </a>
-    <span>My Booking</span>
-    <span class="example-spacer"></span>
-    <!-- for logout -->
-     <a (click)="logout()"      
-        *ngIf="isLoggedIn"
-        mat-icon-button class="example-icon favorite-icon mr20 ml20" 
-        aria-label="Example icon-button with heart icon">
-        Logout
-    </a>   
+<mat-toolbar color="accent">
+
+    <button mat-button >
+    <mat-icon>home</mat-icon> 
+    <span class="ml10" style=" margin-top:4px;font-size: 20px">Welcome</span></button>
+    <span class="fill-remaining-space"></span>
+    <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+        <button class="s2" mat-menu-item routerLink="/customer/category">Category</button>
+        <button class="s2" mat-menu-item routerLink="/customer/allPost">All post</button>
+        <button class="s2" mat-menu-item  [routerLink]="'/customer/postByUser/'+this.id">My post</button>
+        <button class="s2" mat-menu-item routerLink="">Logout</button>
+    </div>
+    <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+     <mat-icon>menu</mat-icon>
+    </button>
+
 </mat-toolbar>
+<mat-menu  x-position="before" #menu="matMenu">
+
+    <button class="s2" mat-menu-item routerLink="/customer/category">Category</button>
+    <button class="s2" mat-menu-item routerLink="/customer/allPost">All post</button>
+    <button class="s2"  mat-menu-item [routerLink]="'/customer/postByUser/'+this.id">My Post</button>
+    <button class="s2" mat-menu-item routerLink="">logout</button>
+    <!--<button mat-menu-item>Help</button>-->
+</mat-menu>

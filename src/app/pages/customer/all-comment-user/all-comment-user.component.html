@@ -1,0 +1,37 @@
+
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="col-md-12 margin" >
+                <mat-card>
+                    <p class="center font mt20">comment section</p>
+                </mat-card>
+                
+                <div class="center" class="mt20 "  *ngFor="let e of commentData ">
+                    <mat-card >
+                        <mat-form-field class ="w100 font_r " appearance="outline">
+                            
+                                <textarea 
+                                class ="font center "
+                                style="color:cornflowerblue"
+                                type = "text" 
+                                name="content"
+                                placeholder="Enter content" 
+                                matInput
+                                rows=2
+                                disabled="disabled"
+                                [(ngModel)]="e.content"
+                                ></textarea>
+                        </mat-form-field>
+                       
+                    </mat-card>
+            </div>
+         
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt50"></div>
+<div class="mt20" *ngIf="commentData?.length ==0">
+    <strong  class="font_d center">No comment found!!</strong>
+  </div>

@@ -14,22 +14,27 @@
                         <mat-form-field class ="full-width" appearance="outline">
                             <mat-label>User Email</mat-label>
                             <input 
-                                [(ngModel)]="LoginData.email"
-                                required type="email" 
                                 name="email" 
+                                [(ngModel)]="LoginData.email"
+                                email="true" #prmEmail="ngModel"
                                 matInput placeholder="Enter Email">
                           
-                        
+                                
                         </mat-form-field>
-                        
+                        <div *ngIf="prmEmail.errors?.['email']">
+                            <mat-hint>Email address is not valid</mat-hint> </div>
                         <!-- password field -->
+                        <br>
                         <mat-form-field class ="full-width" appearance="outline">
                             <mat-label>User Password</mat-label>
-                            <input 
+                           
+
+                                <input matInput [type]="showPassword ? 'text' : 'password'" name="password" 
                                 [(ngModel)]="LoginData.password"
-                                required type= "password"   
-                                name ="password"
                                 matInput placeholder="Enter Password">
+                                <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                                    {{showPassword?'visibility_off':'visibility'}}
+                                </mat-icon>
                         </mat-form-field>
 
                         <div class="container text-center">
@@ -39,6 +44,16 @@
                                 [routerLink]="'/signup'"
                             >
                             <span class="ml10">Sign Up</span>
+                        </a>
+                        </div>
+
+                        <div class="container text-center mt10">
+                          
+                          
+                            <a  
+                                [routerLink]="'/forget'"
+                            >
+                            <span class="ml10">Forget Password ?</span>
                         </a>
                         </div>
                     </form>

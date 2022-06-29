@@ -1,0 +1,43 @@
+<div class="bootstrap-wrapper mt50 ml50">
+    <div class="container-fluid">
+        <div class="row">
+           
+            <div class="col-md-12">
+                <mat-card>
+                  
+                    <h1 class="center font">Comment Section</h1>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 offset-md-2">
+                                <!-- {{Category | json}} -->
+                                <form (ngSubmit)="formSubmit()">
+                                    
+                                    <mat-form-field class ="w100" appearance="outline">
+                                        <mat-label>comment</mat-label>
+                                            <textarea 
+                                            type = "text" 
+                                            name="comment" 
+                                            placeholder="Enter content" 
+                                            matInput
+                                            rows=3
+                                            [(ngModel)]="commentData.content"
+                                            ></textarea>
+                                      </mat-form-field>
+
+                                    
+                                        
+                                        <!-- adding button -->
+                                        
+                                        <div class="container text-center mt10">
+                                            <button type="submit" mat-raised-button color="accent">comment</button>
+                                            <button  class="ml10" mat-raised-button color="accent" routerLink="/customer/allPost">Cancel</button>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
