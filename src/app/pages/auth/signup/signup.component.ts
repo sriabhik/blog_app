@@ -21,6 +21,7 @@ interface datatype {
 export class SignupComponent implements OnInit {
   public showPassword: 
   boolean = false;
+
   public showPassword2: 
   boolean = false;
   public user={
@@ -30,6 +31,7 @@ export class SignupComponent implements OnInit {
     about:''
     
   }
+  
   constructor(  private userService :UserService,
                 private snack:MatSnackBar,
               
@@ -40,12 +42,17 @@ export class SignupComponent implements OnInit {
   formSubmit(){
    
   
-    if(this.user.email==''||this.user.email==null){
-      this.snack.open("Email Required","Cancel",
+    if(this.user.email==''||this.user.email==null || this.user.email.length < 5){
+      this.snack.open("Email Required or invalid email","Cancel",
       {duration:2000})
         return;
     }
     if(!this.user.email.includes(".")){
+      this.snack.open("Invalid Email ","Cancel",
+      {duration:2000})
+        return;
+    }
+    if(!this.user.email.includes(".com") || !this.user.email.includes("@")){
       this.snack.open("Invalid Email ","Cancel",
       {duration:2000})
         return;
@@ -55,7 +62,11 @@ export class SignupComponent implements OnInit {
       {duration:2000}) 
         return;
     }
-    
+    if(this.user.name.length<3){
+      this.snack.open("Invalid name","Cancel",
+      {duration:2000}) 
+        return;
+    }
     if( this.user.password ==''||this.user.password==null){
       this.snack.open("password Required","Cancel",
       {duration:2000})

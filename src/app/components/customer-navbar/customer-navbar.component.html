@@ -2,7 +2,7 @@
 
     <button mat-button >
     <mat-icon>home</mat-icon> 
-    <span class="ml10" style=" margin-top:4px;font-size: 20px">Welcome</span></button>
+    <span class="ml10" style=" margin-top:4px;font-size: 20px">Welcome : {{this.userData.name}}</span></button>
     <span class="fill-remaining-space"></span>
     <div fxLayout="row" fxShow="false" fxShow.gt-sm>
         <button class="s2" mat-menu-item routerLink="/customer/category">Category</button>

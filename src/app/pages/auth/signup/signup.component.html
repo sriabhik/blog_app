@@ -8,8 +8,8 @@
                         <img class="mt20" style ="height: 100px; width: 300px;"src="../../../assets/logo.png" alt="image.png">
                     </div>
                     <h1 class="text-center"><strong>Register Here</strong></h1>
-                    {{user|json}}
-                    <form (ngSubmit)="formSubmit()">
+                    <!-- {{user|json}} -->
+                    <form  (ngSubmit)="formSubmit()">
                         
                         <!-- email field -->
                         <mat-form-field class ="full-width" appearance="outline">
@@ -23,8 +23,8 @@
                             matInput placeholder="Enter Email"> 
                              
                         </mat-form-field>
-                        <div *ngIf="prmEmail.errors?.['email']">
-                            <mat-hint>Enter a valid email address</mat-hint> 
+                        <div *ngIf="prmEmail.errors?.['email']" >
+                            <mat-hint >Enter a valid email address</mat-hint>
                         </div>
                         <br>
                         <!-- name field -->
@@ -68,7 +68,11 @@
                         
                        
                           <div class="container text-center mt20">
-                              <button type="submit" mat-raised-button color="primary">Register</button>
+                            <div *ngIf="!prmEmail.errors?.['email']">
+
+                                <button  type="submit" mat-raised-button color="primary">Register</button>
+                            </div>
+                           
                               <span class="ml10">Already a user ?</span>
                               <a  
                                   [routerLink]="''"

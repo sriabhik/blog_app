@@ -11,7 +11,7 @@ export class AddcenterComponent implements OnInit {
   constructor(private route:Router) { }
 
   ngOnInit(): void {
-    this.route.navigate(['/admin/allPost'])
+    this.route.navigate(['/admin/Category'])
   }
 
 }

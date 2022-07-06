@@ -35,13 +35,15 @@ export class CategoryComponent implements OnInit {
     this.p = this.p+1;
   }
   delete(cid:any){
+  
     this.admin.deleteCategory(cid).subscribe((success)=>{
-      this.categorys = this.categorys.filter(
-        (CategoryDto: any) =>
-          CategoryDto.categoryId != cid
-          );
-      this.snack.open("User deleted !","Cancel",{duration:3000})
-      this.snack.open("Category Deleted !","Cancel",{duration:3000})
+      // this.categorys = this.categorys.filter(
+      //   (CategoryDto: any) =>
+      //     CategoryDto.categoryId != cid
+      //     );
+      this.getCategorys()
+      window.location.reload()
+      this.snack.open("Category deletion successfull","Cancel",{duration:3000})
     },
     (error)=>{
       this.snack.open("Something went wrong !","Cancel",{duration:3000})
