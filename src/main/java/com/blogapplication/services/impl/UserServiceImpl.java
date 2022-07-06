@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -13,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.blogapplication.config.AppConstants;
+import com.blogapplication.controllers.AuthController;
 import com.blogapplication.entities.Post;
 import com.blogapplication.entities.Role;
 import com.blogapplication.entities.User;
@@ -26,6 +29,7 @@ import com.blogapplication.services.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 
+	Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 	@Autowired
 	private UserRepo userRepo;
 
@@ -42,6 +46,7 @@ public class UserServiceImpl implements UserService {
 	public UserDto createUser(UserDto userDto) {
 		User user = this.dtoToUser(userDto);
 		User savedUser = this.userRepo.save(user);
+		logger.info("user created successfully");
 		return this.userToDto(savedUser);
 	}
 
@@ -58,6 +63,7 @@ public class UserServiceImpl implements UserService {
 
 		User updatedUser = this.userRepo.save(user);
 		UserDto userDto1 = this.userToDto(updatedUser);
+		logger.info("user update Implementation ");
 		return userDto1;
 	}
 
@@ -66,7 +72,7 @@ public class UserServiceImpl implements UserService {
 
 		User user = this.userRepo.findById(userId)
 				.orElseThrow(() -> new ResourceNotFoundException("User", " Id ", userId));
-
+		logger.info("Get User By Id implementation ");
 		return this.userToDto(user);
 	}
 
@@ -92,7 +98,7 @@ public class UserServiceImpl implements UserService {
 		userResponse.setTotalElements(pageUser.getTotalElements());
 		userResponse.setTotalPages(pageUser.getTotalPages());
 		userResponse.setLastPage(pageUser.isLast());
-		
+		logger.info("Get all User implemetation ");
 		return userResponse;
 	}
 
@@ -100,6 +106,7 @@ public class UserServiceImpl implements UserService {
 	public void deleteUser(Integer userId) {
 		User user = this.userRepo.findById(userId)
 				.orElseThrow(() -> new ResourceNotFoundException("User", "Id", userId));
+		logger.info("Delete User implemetation ");
 		this.userRepo.delete(user);
 
 	}
@@ -122,7 +129,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public UserDto registerNewUser(UserDto userDto) {
-		System.out.println("userImpl");
+	
 		User user = this.modelMapper.map(userDto, User.class);
 
 		// encoded the password
@@ -134,7 +141,7 @@ public class UserServiceImpl implements UserService {
 		user.getRoles().add(role);
 
 		User newUser = this.userRepo.save(user);
-
+		logger.info("Register new User Implementation ");
 		
 		return this.modelMapper.map(newUser, UserDto.class);
 	}

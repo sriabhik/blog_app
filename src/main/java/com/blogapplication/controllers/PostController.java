@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -36,6 +38,7 @@ import com.blogapplication.services.PostService;
 @CrossOrigin("*")
 public class PostController {
 	
+	Logger logger = LoggerFactory.getLogger(CommentController.class);
 	@Autowired 
 	private PostService postService;
 	@Autowired
@@ -46,6 +49,7 @@ public class PostController {
 	@PostMapping("/user/{userId}/category/{categoryId}/posts")
 	public ResponseEntity<PostDto> createPost(@RequestBody PostDto postDto,@PathVariable Integer userId,@PathVariable Integer categoryId){
 		PostDto createPost = this.postService.createPost(postDto, userId, categoryId);
+		logger.info("creating post");
 		return new ResponseEntity<PostDto>(createPost,HttpStatus.CREATED);
 	}
 	
@@ -53,18 +57,21 @@ public class PostController {
 	@PutMapping("/updatePost/{postId}")
 	public ResponseEntity<PostDto> updatePost(@RequestBody PostDto postDto,@PathVariable Integer postId){
 		PostDto updatePost = this.postService.updatePost(postDto, postId);
+		logger.info("Updating post");
 		return new ResponseEntity<PostDto>(updatePost,HttpStatus.OK);
 	}
 	//delete post
 	@DeleteMapping("/deletePost/{postId}")
 	public ResponseEntity<ApiResponse> deletePost(@PathVariable Integer postId){
 		this.postService.deletePost(postId);
+		logger.info("Deleting post");
 		return new ResponseEntity<ApiResponse>(new ApiResponse("Post deleted successfully!!",true),HttpStatus.OK);
 	}
 	//get by post id
 	@GetMapping("/getPostById/{postId}")
 	public ResponseEntity<PostDto> getPostById(@PathVariable Integer postId){
 		PostDto getPost = this.postService.getPostById(postId);
+		logger.info("Getting post by Id");
 		return new ResponseEntity<PostDto>(getPost,HttpStatus.OK);
 	}
 	//get all post
@@ -75,62 +82,54 @@ public class PostController {
 			@RequestParam(value="sortBy",defaultValue=AppConstants.SORT_BY,required=false) String sortBy,
 			@RequestParam(value="sortDir",defaultValue=AppConstants.SORT_DIR,required=false) String sortDir
 			){
-	
+		logger.info("Getting all Post");
 		return new ResponseEntity<PostResponse >(this.postService.getAllPost(pageNumber,pageSize,sortBy,sortDir),HttpStatus.OK);
 	}
 	//get all post by user
 	@GetMapping("/getPostByUser/{userId}")
 	public ResponseEntity<List<PostDto> >getPostByUser(@PathVariable Integer userId){
 		List<PostDto> postDto = this.postService.getPostByUser(userId);
+		logger.info("Get Post By User");
 		return new ResponseEntity<List<PostDto> >(postDto,HttpStatus.OK);
 	}
 	//get all post by category
 	@GetMapping("/getPostByCategory/{categoryId}")
 	public ResponseEntity<List<PostDto> >getPostByCategory(@PathVariable Integer categoryId){
-	
+		logger.info("Get Post By Category");
 		return new ResponseEntity<List<PostDto> >(this.postService.getPostByCategory(categoryId),HttpStatus.OK);
 	}
 	
-	//searching
-	@GetMapping("/searchPost/{keyword}")
-	public ResponseEntity<List<PostDto>> searchPost(@PathVariable String keyword){
+//	//searching
+//	@GetMapping("/searchPost/{keyword}")
+//	public ResponseEntity<List<PostDto>> searchPost(@PathVariable String keyword){
+//	
+//		return new ResponseEntity<List<PostDto> >(this.postService.searchPosts(keyword),HttpStatus.OK);
+//	}
 	
-		return new ResponseEntity<List<PostDto> >(this.postService.searchPosts(keyword),HttpStatus.OK);
-	}
-	
-	//upload image
+//upload image
 //	@PostMapping("/post/image/upload/{postId}")
-//	public ResponseEntity<PostDto> uploadPostImage( @RequestParam("image") MultipartFile image,@PathVariable Integer postId) throws IOException{
+//	public ResponseEntity<PostDto> uploadPostImage(@RequestParam("image") MultipartFile image,
+//			@PathVariable Integer postId) throws IOException {
+//
 //		PostDto postDto = this.postService.getPostById(postId);
-//		String  fileName = this.fileService.uploadImage(path, image);
 //		
+//		String fileName = this.fileService.uploadImage(path, image);
+//		System.out.println(fileName);
 //		postDto.setImageName(fileName);
 //		PostDto updatePost = this.postService.updatePost(postDto, postId);
-//		return new ResponseEntity<PostDto>(updatePost,HttpStatus.OK);
+//		return new ResponseEntity<PostDto>(updatePost, HttpStatus.OK);
+//
 //	}
-	@PostMapping("/post/image/upload/{postId}")
-	public ResponseEntity<PostDto> uploadPostImage(@RequestParam("image") MultipartFile image,
-			@PathVariable Integer postId) throws IOException {
-
-		PostDto postDto = this.postService.getPostById(postId);
-		
-		String fileName = this.fileService.uploadImage(path, image);
-		System.out.println(fileName);
-		postDto.setImageName(fileName);
-		PostDto updatePost = this.postService.updatePost(postDto, postId);
-		return new ResponseEntity<PostDto>(updatePost, HttpStatus.OK);
-
-	}
-	//post image serve
-	@GetMapping(value = "/post/image/{imageName}",produces = MediaType.IMAGE_JPEG_VALUE)
-    public void downloadImage(
-            @PathVariable("imageName") String imageName,
-            HttpServletResponse response
-    ) throws IOException {
-
-        InputStream resource = this.fileService.getResource(path, imageName);
-        response.setContentType(MediaType.IMAGE_JPEG_VALUE);
-        StreamUtils.copy(resource,response.getOutputStream())   ;
-
-    }
+//	//post image serve
+//	@GetMapping(value = "/post/image/{imageName}",produces = MediaType.IMAGE_JPEG_VALUE)
+//    public void downloadImage(
+//            @PathVariable("imageName") String imageName,
+//            HttpServletResponse response
+//    ) throws IOException {
+//
+//        InputStream resource = this.fileService.getResource(path, imageName);
+//        response.setContentType(MediaType.IMAGE_JPEG_VALUE);
+//        StreamUtils.copy(resource,response.getOutputStream())   ;
+//
+//    }
 }

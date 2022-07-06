@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -23,7 +25,7 @@ import com.blogapplication.services.CategoryService;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
-
+	Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 	@Autowired
 	private CategoryRepo categoryRepo;
 	@Autowired
@@ -34,6 +36,7 @@ public class CategoryServiceImpl implements CategoryService {
 //		convert categorydto to category
 		Category cat = this.modelMapper.map(categoryDto, Category.class);
 		Category createdCat = this.categoryRepo.save(cat);
+		logger.info("create category Implementation");
 		return this.modelMapper.map(createdCat,CategoryDto.class);
 	}
 
@@ -44,6 +47,7 @@ public class CategoryServiceImpl implements CategoryService {
 		cat.setCategoryDescription(categoryDto.getCategoryDescription());
 		cat.setCategoryTitle(categoryDto.getCategoryTitle());
 		Category updatedCat = this.categoryRepo.save(cat);
+		logger.info("Update category Implementation");
 		return this.modelMapper.map(updatedCat,CategoryDto.class);
 	}
 
@@ -51,17 +55,20 @@ public class CategoryServiceImpl implements CategoryService {
 	public void deleteCategory(Integer categoryId) {
 		// TODO Auto-generated method stub
 		Category cat = this.categoryRepo.findById(categoryId).orElseThrow(()-> new ResourceNotFoundException("Category","Category Id",categoryId));
+		logger.info("delete category Implementation");
 		this.categoryRepo.delete(cat);
 	}
 
 	@Override
 	public CategoryDto getCategory(Integer categoryId) {
 		Category cat = this.categoryRepo.findById(categoryId).orElseThrow(()-> new ResourceNotFoundException("Category","Category Id",categoryId));
+		logger.info("Get category By Id Implementation ");
 		return this.modelMapper.map(cat,CategoryDto.class);
 	}
 
 	@Override
 	public CategoryResponse getAllCategory(Integer pageNumber,Integer pageSize,String sortBy,String sortDir) {
+		logger.info("Get All category Implementation");
 		Sort sort = null;
 		if(sortDir.equalsIgnoreCase("asc")) {
 			sort = Sort.by(sortBy).ascending();

@@ -2,6 +2,9 @@ package com.blogapplication.controllers;
 
 import java.security.Principal;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,6 +31,7 @@ import com.blogapplication.payloads.UserDto;
 import com.blogapplication.security.JwtTokenHelper;
 import com.blogapplication.services.UserService;
 
+
 @RestController
 @RequestMapping("/api/auth")
 @CrossOrigin("*")
@@ -45,11 +49,13 @@ public class AuthController {
 	private ModelMapper modelMapper;
 	//register new user
 	
+	Logger logger = LoggerFactory.getLogger(AuthController.class);
+	
 	@PostMapping("/registerUser")
 	public ResponseEntity<UserDto> registerUser(@RequestBody UserDto userDto){
-		System.out.println("AuthCo");
+		
 		UserDto registeredUser = this.userService.registerNewUser(userDto);
-
+		logger.info(userDto.getEmail());
 		return new ResponseEntity<UserDto>(registeredUser, HttpStatus.CREATED);
 		
 	}
@@ -60,7 +66,7 @@ public class AuthController {
 			this.authenticate(request.getUsername(),request.getPassword());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			
+			logger.warn("credential Invalid");
 			throw new InvalidUser("username","password:");
 		}
 		UserDetails userDetails = this.userDetailsService.loadUserByUsername(request.getUsername());
@@ -84,6 +90,7 @@ public class AuthController {
 	@GetMapping("/current-user")
     public UserDto getCurrentUser(Principal principal){
         User user = (User)this.userDetailsService.loadUserByUsername(principal.getName());
+        logger.info("Accessing current user");
         return this.modelMapper.map(user, UserDto.class);
     }
 }

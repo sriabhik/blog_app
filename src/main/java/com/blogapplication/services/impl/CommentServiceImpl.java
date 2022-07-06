@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +21,7 @@ import com.blogapplication.services.CommentService;
 
 @Service
 public class CommentServiceImpl implements CommentService {
-
+	Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 	@Autowired
 	private CommentRepo commentRepo;
 	@Autowired
@@ -32,6 +34,7 @@ public class CommentServiceImpl implements CommentService {
 		Comment comment = this.modelMapper.map(commentDto,Comment.class);
 		comment.setPost(post);
 		Comment createComment =this.commentRepo.save(comment);
+		logger.info("create comment implementation");
 		return this.modelMapper.map(createComment, CommentDto.class);
 	}
 
@@ -39,6 +42,7 @@ public class CommentServiceImpl implements CommentService {
 	public void deleteComment(Integer commentId) {
 		// TODO Auto-generated method stub
 		 Comment comment = this.commentRepo.findById(commentId).orElseThrow(()->new ResourceNotFoundException("comment","commentId",commentId));
+			logger.info("delete comment implementation");
 		 this.commentRepo.delete(comment);
 
 	}
@@ -49,6 +53,7 @@ public class CommentServiceImpl implements CommentService {
 		Post  post = this.postRepo.findById(postId).orElseThrow(()-> new ResourceNotFoundException("post","postId",postId));
 		List<Comment> comments =  this.commentRepo.findByPost(post);
 		List<CommentDto> commentDtos = comments.stream().map((p)-> this.modelMapper.map(p, CommentDto.class)).collect(Collectors.toList());
+		logger.info("Get comment By Post implementation");
 		return commentDtos;
 	
 	}

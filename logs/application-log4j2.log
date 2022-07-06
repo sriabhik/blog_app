@@ -1,0 +1,6 @@
+2022-07-07 00:01:29 [http-nio-9090-exec-6] WARN  : credential Invalid
+2022-07-07 00:01:29 [http-nio-9090-exec-6] WARN  : Resolved [com.blogapplication.exceptions.InvalidUser: Wrong Credentials username password:]
+2022-07-07 00:02:54 [http-nio-9090-exec-7] INFO  : Accessing current user
+2022-07-07 00:02:54 [http-nio-9090-exec-10] INFO  : Accessing current user
+2022-07-07 00:02:54 [http-nio-9090-exec-1] INFO  : Getting all Post
+2022-07-07 00:02:54 [http-nio-9090-exec-1] INFO  : getAll post Implemenation

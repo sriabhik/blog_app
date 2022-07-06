@@ -2,6 +2,8 @@ package com.blogapplication.controllers;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +26,7 @@ import com.blogapplication.services.CommentService;
 @CrossOrigin("*")
 public class CommentController {
 
+	Logger logger = LoggerFactory.getLogger(CommentController.class);
 	@Autowired
 	private CommentService commentService ;
 	//create
@@ -31,12 +34,14 @@ public class CommentController {
 	@PostMapping("/createComment/{postId}")
 	public ResponseEntity<CommentDto> createComment(@RequestBody CommentDto commentDto,@PathVariable Integer postId){
 		CommentDto createComment = this.commentService.createComment(commentDto, postId);
+		logger.info("Comment created");
 		return new ResponseEntity<CommentDto>(createComment,HttpStatus.OK); 
 	}
 	//delete
 	@DeleteMapping("/deleteComment/{commentId}")
 	public ResponseEntity<ApiResponse> deleteComment(@PathVariable Integer commentId){
 		this.commentService.deleteComment(commentId);
+		logger.info("Comment deleted");
 		return new ResponseEntity<ApiResponse>(new ApiResponse("Comment deleted successfully!!",true),HttpStatus.OK);
 	}
 	
@@ -44,6 +49,7 @@ public class CommentController {
 	@GetMapping("/getCommentByPost/{postId}")
 	public ResponseEntity<List<CommentDto> > getComment(@PathVariable Integer postId){
 		List<CommentDto> commentDto = this.commentService.getCommentByPost(postId);
+		logger.info("get Comment by Id");
 		return new ResponseEntity<List<CommentDto> >(commentDto,HttpStatus.OK);
 	}
 }

@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +32,7 @@ import com.blogapplication.services.CategoryService;
 @CrossOrigin(origins = "http://localhost:4200")
 public class CategoryController {
 
+	Logger logger = LoggerFactory.getLogger(CategoryController.class);
 	@Autowired
 	private CategoryService categoryService;
 	//create
@@ -37,12 +40,14 @@ public class CategoryController {
 	public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto){
 		System.out.println(("Category"));
 		CategoryDto createdCat  = this.categoryService.createCateogry(categoryDto);
+		logger.info("Creating categeory with name : "+ categoryDto.getCategoryTitle());
 		return new ResponseEntity<CategoryDto>(createdCat,HttpStatus.CREATED);
 	}
 	//update
 	@PutMapping("/updateCategory/{categoryId}")
 	public ResponseEntity<CategoryDto> updateCategory(@Valid @RequestBody CategoryDto categoryDto,@PathVariable Integer categoryId){
 		CategoryDto updateCat  = this.categoryService.updateCateogry(categoryDto,categoryId);
+		logger.info("Updating categeory with name : "+ categoryDto.getCategoryTitle());
 		return new ResponseEntity<CategoryDto>(updateCat,HttpStatus.OK);
 	}
 	
@@ -50,12 +55,14 @@ public class CategoryController {
 	@DeleteMapping("/deleteCategory/{categoryId}")
 	public ResponseEntity<ApiResponse> deleteCategory(@PathVariable Integer categoryId){
 		this.categoryService.deleteCategory(categoryId);
+		logger.info("Deleting categeory with category Id: "+ categoryId);
 		return new ResponseEntity<ApiResponse>(new ApiResponse("Category deleted successfully !!",true),HttpStatus.OK);
 	}
 	
 	//get
 	@GetMapping("/getCategory/{categoryId}")
 	public ResponseEntity<CategoryDto> getUser(@PathVariable Integer categoryId) {
+		logger.info("Getting categeory with category Id: "+ categoryId);
 		return new ResponseEntity<CategoryDto>(this.categoryService.getCategory(categoryId),HttpStatus.OK);
 	}
 	
@@ -67,6 +74,7 @@ public class CategoryController {
 			@RequestParam(value="sortBy",defaultValue=AppConstants.SORT_BY,required=false) String sortBy,
 			@RequestParam(value="sortDir",defaultValue=AppConstants.SORT_DIR,required=false) String sortDir
 			) {
+		logger.info("Get all categeory : ");
 		return new ResponseEntity<CategoryResponse>(this.categoryService.getAllCategory(pageNumber,pageSize,sortBy,sortDir),HttpStatus.OK);
 	}
 }
