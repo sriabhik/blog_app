@@ -3,10 +3,6 @@ package com.blogapplication.payloads;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.blogapplication.entities.Category;
-import com.blogapplication.entities.Comment;
-import com.blogapplication.entities.User;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

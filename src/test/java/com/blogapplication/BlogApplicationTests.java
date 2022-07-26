@@ -9,5 +9,10 @@ class BlogApplicationTests {
 	@Test
 	void contextLoads() {
 	}
+	
+	@Test
+	public void isTestingWork() {
+		System.out.println("I am working");
+	}
 
 }

@@ -1,0 +1,438 @@
+2022-07-26 00:12:02.652  INFO 16008 --- [restartedMain] com.blogapplication.BlogApplication      : Starting BlogApplication using Java 17.0.1 on DESKTOP-SDVVS5S with PID 16008 (C:\Users\HP\Downloads\blog-application\blog-application\target\classes started by HP in C:\Users\HP\Downloads\blog-application\blog-application)
+2022-07-26 00:12:02.668  INFO 16008 --- [restartedMain] com.blogapplication.BlogApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-07-26 00:12:02.917  INFO 16008 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-26 00:12:02.933  INFO 16008 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-26 00:12:09.647  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-26 00:12:09.788  INFO 16008 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 135 ms. Found 5 JPA repository interfaces.
+2022-07-26 00:12:12.539  INFO 16008 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-26 00:12:12.574  INFO 16008 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-26 00:12:12.576  INFO 16008 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-07-26 00:12:13.188  INFO 16008 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-26 00:12:13.188  INFO 16008 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 10255 ms
+2022-07-26 00:12:14.223  INFO 16008 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-26 00:12:14.514  INFO 16008 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-26 00:12:15.297  INFO 16008 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-26 00:12:15.684  INFO 16008 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-07-26 00:12:20.302  INFO 16008 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-07-26 00:12:20.409  INFO 16008 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-07-26 00:12:22.640  INFO 16008 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-26 00:12:22.675  INFO 16008 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-26 00:12:24.595  WARN 16008 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-26 00:12:25.142  INFO 16008 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2e66f4cf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68205a3e, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e2642d7, org.springframework.security.web.header.HeaderWriterFilter@4c47b5a6, org.springframework.security.web.authentication.logout.LogoutFilter@3d94d881, com.blogapplication.security.JwtAuthenticationFilter@5881495, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@443844e0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7d67609e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@53a078c4, org.springframework.security.web.session.SessionManagementFilter@210dbe2a, org.springframework.security.web.access.ExceptionTranslationFilter@6446d0cc, org.springframework.security.web.access.intercept.AuthorizationFilter@489138db]
+2022-07-26 00:12:26.361  INFO 16008 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-26 00:12:26.361  INFO 16008 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-07-26 00:12:26.423  INFO 16008 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-26 00:12:26.439  INFO 16008 --- [restartedMain] com.blogapplication.BlogApplication      : Started BlogApplication in 26.58 seconds (JVM running for 34.061)
+2022-07-26 00:17:09.987  INFO 16008 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-26 00:17:09.987  INFO 16008 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-26 00:17:09.987  INFO 16008 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-07-26 00:17:11.393  WARN 16008 --- [http-nio-8080-exec-2] c.b.controllers.AuthController           : credential Invalid
+2022-07-26 00:17:11.455  WARN 16008 --- [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.blogapplication.exceptions.InvalidUser: Wrong Credentials username password:]
+2022-07-26 00:17:27.529  WARN 16008 --- [http-nio-8080-exec-3] c.b.controllers.AuthController           : credential Invalid
+2022-07-26 00:17:27.529  WARN 16008 --- [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.blogapplication.exceptions.InvalidUser: Wrong Credentials username password:]
+2022-07-26 00:17:52.224  WARN 16008 --- [http-nio-8080-exec-4] c.b.controllers.AuthController           : credential Invalid
+2022-07-26 00:17:52.240  WARN 16008 --- [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.blogapplication.exceptions.InvalidUser: Wrong Credentials username password:]
+2022-07-26 00:18:03.735  WARN 16008 --- [http-nio-8080-exec-5] c.b.controllers.AuthController           : credential Invalid
+2022-07-26 00:18:03.738  WARN 16008 --- [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.blogapplication.exceptions.InvalidUser: Wrong Credentials username password:]
+2022-07-26 00:18:40.507  WARN 16008 --- [http-nio-8080-exec-8] c.b.controllers.AuthController           : credential Invalid
+2022-07-26 00:18:40.509  WARN 16008 --- [http-nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.blogapplication.exceptions.InvalidUser: Wrong Credentials username password:]
+2022-07-26 00:18:51.537  WARN 16008 --- [http-nio-8080-exec-10] c.b.controllers.AuthController           : credential Invalid
+2022-07-26 00:18:51.538  WARN 16008 --- [http-nio-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.blogapplication.exceptions.InvalidUser: Wrong Credentials username password:]
+2022-07-26 00:19:25.983  INFO 16008 --- [http-nio-8080-exec-4] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 00:19:26.201  INFO 16008 --- [http-nio-8080-exec-5] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 00:19:26.235  INFO 16008 --- [http-nio-8080-exec-7] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 00:19:26.235  INFO 16008 --- [http-nio-8080-exec-7] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 00:19:28.657  INFO 16008 --- [http-nio-8080-exec-9] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 00:19:28.665  INFO 16008 --- [http-nio-8080-exec-10] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 00:19:28.666  INFO 16008 --- [http-nio-8080-exec-10] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 00:19:29.597  INFO 16008 --- [http-nio-8080-exec-1] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 00:19:29.597  INFO 16008 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 00:19:30.678  INFO 16008 --- [http-nio-8080-exec-3] c.b.services.impl.UserServiceImpl        : Get post By User Implementation
+2022-07-26 00:19:30.709  INFO 16008 --- [http-nio-8080-exec-3] c.b.controllers.CommentController        : Get Post By User
+2022-07-26 14:45:23.986  INFO 3896 --- [restartedMain] com.blogapplication.BlogApplication      : Starting BlogApplication using Java 17.0.1 on DESKTOP-SDVVS5S with PID 3896 (C:\Users\HP\Downloads\blog-application\blog-application\target\classes started by HP in C:\Users\HP\Downloads\blog-application\blog-application)
+2022-07-26 14:45:24.011  INFO 3896 --- [restartedMain] com.blogapplication.BlogApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-07-26 14:45:24.174  INFO 3896 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-26 14:45:24.175  INFO 3896 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-26 14:45:32.991  INFO 3896 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-26 14:45:33.241  INFO 3896 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 225 ms. Found 5 JPA repository interfaces.
+2022-07-26 14:45:35.681  INFO 3896 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-26 14:45:35.711  INFO 3896 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-26 14:45:35.712  INFO 3896 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-07-26 14:45:36.296  INFO 3896 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-26 14:45:36.296  INFO 3896 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 12120 ms
+2022-07-26 14:45:37.199  INFO 3896 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-26 14:45:40.760  INFO 3896 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-26 14:45:42.770  INFO 3896 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-26 14:45:43.128  INFO 3896 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-07-26 14:45:45.142  INFO 3896 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-07-26 14:45:45.276  INFO 3896 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-07-26 14:45:47.902  INFO 3896 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-26 14:45:47.931  INFO 3896 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-26 14:45:49.531  WARN 3896 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-26 14:45:50.427  INFO 3896 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@51369627, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@122fa4ff, org.springframework.security.web.context.SecurityContextPersistenceFilter@2bb9e5cc, org.springframework.security.web.header.HeaderWriterFilter@16abd6bf, org.springframework.security.web.authentication.logout.LogoutFilter@2c4de2c9, com.blogapplication.security.JwtAuthenticationFilter@7a0ae59c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60dbbbb9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d9d8254, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@cfeebab, org.springframework.security.web.session.SessionManagementFilter@4fdca65e, org.springframework.security.web.access.ExceptionTranslationFilter@25c9a6a7, org.springframework.security.web.access.intercept.AuthorizationFilter@70480608]
+2022-07-26 14:45:51.692  INFO 3896 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-26 14:45:51.700  INFO 3896 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-07-26 14:45:51.843  INFO 3896 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-26 14:45:51.860  INFO 3896 --- [restartedMain] com.blogapplication.BlogApplication      : Started BlogApplication in 29.75 seconds (JVM running for 33.773)
+2022-07-26 14:46:17.152  INFO 3896 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-26 14:46:17.152  INFO 3896 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-26 14:46:17.162  INFO 3896 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-07-26 14:46:17.240  WARN 3896 --- [http-nio-8080-exec-1] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 14:46:18.903  WARN 3896 --- [http-nio-8080-exec-3] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 14:46:19.105  INFO 3896 --- [http-nio-8080-exec-4] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:46:19.340  INFO 3896 --- [http-nio-8080-exec-5] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:46:19.349  WARN 3896 --- [http-nio-8080-exec-6] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 14:46:19.392  INFO 3896 --- [http-nio-8080-exec-7] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:46:19.393  INFO 3896 --- [http-nio-8080-exec-7] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:46:44.754  INFO 3896 --- [http-nio-8080-exec-8] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:46:44.755  INFO 3896 --- [http-nio-8080-exec-8] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:46:47.304  WARN 3896 --- [http-nio-8080-exec-9] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 14:46:47.328  INFO 3896 --- [http-nio-8080-exec-10] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:46:47.335  INFO 3896 --- [http-nio-8080-exec-1] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:46:47.336  INFO 3896 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:46:55.566  INFO 3896 --- [http-nio-8080-exec-2] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:46:55.566  INFO 3896 --- [http-nio-8080-exec-2] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:46:56.725  WARN 3896 --- [http-nio-8080-exec-3] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 14:46:56.758  INFO 3896 --- [http-nio-8080-exec-4] c.b.services.impl.UserServiceImpl        : Get post By User Implementation
+2022-07-26 14:46:57.022  INFO 3896 --- [http-nio-8080-exec-4] c.b.controllers.CommentController        : Get Post By User
+2022-07-26 14:46:57.410  INFO 3896 --- [http-nio-8080-exec-5] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:46:57.410  INFO 3896 --- [http-nio-8080-exec-5] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:46:57.412  INFO 3896 --- [http-nio-8080-exec-6] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:46:57.796  INFO 3896 --- [http-nio-8080-exec-7] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:46:57.803  INFO 3896 --- [http-nio-8080-exec-7] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:46:58.859  INFO 3896 --- [http-nio-8080-exec-8] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:46:58.859  INFO 3896 --- [http-nio-8080-exec-8] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:46:58.872  INFO 3896 --- [http-nio-8080-exec-9] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:47:00.126  WARN 3896 --- [http-nio-8080-exec-10] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 14:47:00.142  INFO 3896 --- [http-nio-8080-exec-1] c.b.controllers.CommentController        : Get Post By Category
+2022-07-26 14:47:00.142  INFO 3896 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : Get post By Category Implementation
+2022-07-26 14:47:01.520  INFO 3896 --- [http-nio-8080-exec-2] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:47:01.520  INFO 3896 --- [http-nio-8080-exec-2] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:47:01.525  INFO 3896 --- [http-nio-8080-exec-3] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:47:02.121  INFO 3896 --- [http-nio-8080-exec-4] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:47:02.121  INFO 3896 --- [http-nio-8080-exec-4] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:47:03.445  INFO 3896 --- [http-nio-8080-exec-6] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:47:03.446  INFO 3896 --- [http-nio-8080-exec-6] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:47:03.449  INFO 3896 --- [http-nio-8080-exec-5] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:47:04.851  WARN 3896 --- [http-nio-8080-exec-7] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 14:47:04.875  INFO 3896 --- [http-nio-8080-exec-9] c.b.controllers.CommentController        : Get Post By Category
+2022-07-26 14:47:04.875  INFO 3896 --- [http-nio-8080-exec-9] c.b.services.impl.UserServiceImpl        : Get post By Category Implementation
+2022-07-26 14:47:06.076  WARN 3896 --- [http-nio-8080-exec-8] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 14:47:06.108  INFO 3896 --- [http-nio-8080-exec-10] c.b.services.impl.UserServiceImpl        : Get comment By Post implementation
+2022-07-26 14:47:06.108  INFO 3896 --- [http-nio-8080-exec-10] c.b.controllers.CommentController        : get Comment by Id
+2022-07-26 14:47:08.873  INFO 3896 --- [http-nio-8080-exec-1] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:47:08.873  INFO 3896 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:47:08.878  INFO 3896 --- [http-nio-8080-exec-3] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:47:17.127  INFO 3896 --- [http-nio-8080-exec-2] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:47:17.127  INFO 3896 --- [http-nio-8080-exec-2] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:47:17.135  INFO 3896 --- [http-nio-8080-exec-4] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:56:20.181  INFO 3896 --- [http-nio-8080-exec-7] c.b.controllers.CommentController        : Get Post By Category
+2022-07-26 14:56:20.182  INFO 3896 --- [http-nio-8080-exec-7] c.b.services.impl.UserServiceImpl        : Get post By Category Implementation
+2022-07-26 14:56:32.952  WARN 3896 --- [http-nio-8080-exec-9] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 14:56:33.295  INFO 3896 --- [http-nio-8080-exec-8] c.b.services.impl.UserServiceImpl        : create comment implementation
+2022-07-26 14:56:33.296  INFO 3896 --- [http-nio-8080-exec-8] c.b.controllers.CommentController        : Comment created
+2022-07-26 14:56:35.759  INFO 3896 --- [http-nio-8080-exec-10] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:56:35.760  INFO 3896 --- [http-nio-8080-exec-10] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:56:38.663  INFO 3896 --- [http-nio-8080-exec-3] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:56:38.664  INFO 3896 --- [http-nio-8080-exec-3] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:56:39.880  INFO 3896 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : Get comment By Post implementation
+2022-07-26 14:56:39.880  INFO 3896 --- [http-nio-8080-exec-1] c.b.controllers.CommentController        : get Comment by Id
+2022-07-26 14:56:50.051  INFO 3896 --- [http-nio-8080-exec-4] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:56:50.052  INFO 3896 --- [http-nio-8080-exec-4] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:56:50.056  INFO 3896 --- [http-nio-8080-exec-2] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:56:52.242  INFO 3896 --- [http-nio-8080-exec-5] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:56:52.243  INFO 3896 --- [http-nio-8080-exec-5] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:56:52.874  INFO 3896 --- [http-nio-8080-exec-6] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:56:52.874  INFO 3896 --- [http-nio-8080-exec-6] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:56:52.880  INFO 3896 --- [http-nio-8080-exec-7] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:56:53.410  INFO 3896 --- [http-nio-8080-exec-9] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:56:53.411  INFO 3896 --- [http-nio-8080-exec-9] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:56:53.841  INFO 3896 --- [http-nio-8080-exec-8] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:56:53.843  INFO 3896 --- [http-nio-8080-exec-8] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:56:53.847  INFO 3896 --- [http-nio-8080-exec-10] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:56:54.234  INFO 3896 --- [http-nio-8080-exec-3] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:56:54.234  INFO 3896 --- [http-nio-8080-exec-3] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:56:54.596  INFO 3896 --- [http-nio-8080-exec-1] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:56:54.599  INFO 3896 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:56:54.601  INFO 3896 --- [http-nio-8080-exec-2] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:56:55.059  INFO 3896 --- [http-nio-8080-exec-4] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:56:55.060  INFO 3896 --- [http-nio-8080-exec-4] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:56:55.419  INFO 3896 --- [http-nio-8080-exec-5] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:56:55.420  INFO 3896 --- [http-nio-8080-exec-5] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:56:55.423  INFO 3896 --- [http-nio-8080-exec-7] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:56:55.770  INFO 3896 --- [http-nio-8080-exec-6] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:56:55.770  INFO 3896 --- [http-nio-8080-exec-6] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:56:56.430  INFO 3896 --- [http-nio-8080-exec-9] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:56:56.430  INFO 3896 --- [http-nio-8080-exec-9] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:56:56.434  INFO 3896 --- [http-nio-8080-exec-10] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:56:56.769  INFO 3896 --- [http-nio-8080-exec-8] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:56:56.769  INFO 3896 --- [http-nio-8080-exec-8] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:56:57.235  INFO 3896 --- [http-nio-8080-exec-3] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:56:57.235  INFO 3896 --- [http-nio-8080-exec-3] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:56:57.242  INFO 3896 --- [http-nio-8080-exec-2] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:56:57.731  INFO 3896 --- [http-nio-8080-exec-1] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:56:57.733  INFO 3896 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:56:58.098  INFO 3896 --- [http-nio-8080-exec-4] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:56:58.099  INFO 3896 --- [http-nio-8080-exec-4] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:56:58.102  INFO 3896 --- [http-nio-8080-exec-7] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:56:58.409  INFO 3896 --- [http-nio-8080-exec-5] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:56:58.409  INFO 3896 --- [http-nio-8080-exec-5] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:56:58.730  INFO 3896 --- [http-nio-8080-exec-6] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:56:58.733  INFO 3896 --- [http-nio-8080-exec-6] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:56:58.734  INFO 3896 --- [http-nio-8080-exec-10] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:56:59.047  INFO 3896 --- [http-nio-8080-exec-9] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:56:59.048  INFO 3896 --- [http-nio-8080-exec-9] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:56:59.391  INFO 3896 --- [http-nio-8080-exec-8] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:56:59.391  INFO 3896 --- [http-nio-8080-exec-8] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:56:59.396  INFO 3896 --- [http-nio-8080-exec-2] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:56:59.720  INFO 3896 --- [http-nio-8080-exec-3] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:56:59.720  INFO 3896 --- [http-nio-8080-exec-3] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:57:00.083  INFO 3896 --- [http-nio-8080-exec-1] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:57:00.086  INFO 3896 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:57:00.092  INFO 3896 --- [http-nio-8080-exec-7] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:57:00.407  INFO 3896 --- [http-nio-8080-exec-4] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:57:00.408  INFO 3896 --- [http-nio-8080-exec-4] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:57:00.858  INFO 3896 --- [http-nio-8080-exec-5] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:57:00.860  INFO 3896 --- [http-nio-8080-exec-5] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:57:00.862  INFO 3896 --- [http-nio-8080-exec-10] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:57:01.373  INFO 3896 --- [http-nio-8080-exec-6] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:57:01.373  INFO 3896 --- [http-nio-8080-exec-6] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:57:03.589  INFO 3896 --- [http-nio-8080-exec-9] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:57:03.590  INFO 3896 --- [http-nio-8080-exec-9] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:57:03.593  INFO 3896 --- [http-nio-8080-exec-2] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:57:04.204  INFO 3896 --- [http-nio-8080-exec-8] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:57:04.204  INFO 3896 --- [http-nio-8080-exec-8] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:57:05.357  INFO 3896 --- [http-nio-8080-exec-3] c.b.services.impl.UserServiceImpl        : Get post By User Implementation
+2022-07-26 14:57:05.371  INFO 3896 --- [http-nio-8080-exec-3] c.b.controllers.CommentController        : Get Post By User
+2022-07-26 14:57:06.267  INFO 3896 --- [http-nio-8080-exec-7] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:57:06.267  INFO 3896 --- [http-nio-8080-exec-7] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:57:07.547  INFO 3896 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : Get post By User Implementation
+2022-07-26 14:57:07.562  INFO 3896 --- [http-nio-8080-exec-1] c.b.controllers.CommentController        : Get Post By User
+2022-07-26 14:57:08.039  INFO 3896 --- [http-nio-8080-exec-4] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:57:08.040  INFO 3896 --- [http-nio-8080-exec-4] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:57:19.774  INFO 3896 --- [http-nio-8080-exec-10] c.b.services.impl.UserServiceImpl        : Get post By User Implementation
+2022-07-26 14:57:19.785  INFO 3896 --- [http-nio-8080-exec-10] c.b.controllers.CommentController        : Get Post By User
+2022-07-26 14:57:20.677  INFO 3896 --- [http-nio-8080-exec-5] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:57:20.677  INFO 3896 --- [http-nio-8080-exec-5] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:57:21.410  INFO 3896 --- [http-nio-8080-exec-6] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:57:21.410  INFO 3896 --- [http-nio-8080-exec-6] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:57:21.417  INFO 3896 --- [http-nio-8080-exec-2] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:57:23.003  INFO 3896 --- [http-nio-8080-exec-9] c.b.controllers.CommentController        : Get Post By Category
+2022-07-26 14:57:23.004  INFO 3896 --- [http-nio-8080-exec-9] c.b.services.impl.UserServiceImpl        : Get post By Category Implementation
+2022-07-26 14:57:25.035  INFO 3896 --- [http-nio-8080-exec-8] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:57:25.035  INFO 3896 --- [http-nio-8080-exec-8] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:57:27.104  INFO 3896 --- [http-nio-8080-exec-3] c.b.services.impl.UserServiceImpl        : Get post By User Implementation
+2022-07-26 14:57:27.116  INFO 3896 --- [http-nio-8080-exec-3] c.b.controllers.CommentController        : Get Post By User
+2022-07-26 14:57:27.915  INFO 3896 --- [http-nio-8080-exec-7] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:57:27.915  INFO 3896 --- [http-nio-8080-exec-7] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:59:19.025  INFO 3896 --- [http-nio-8080-exec-10] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:59:19.025  INFO 3896 --- [http-nio-8080-exec-10] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:59:19.033  INFO 3896 --- [http-nio-8080-exec-5] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:59:24.395  INFO 3896 --- [http-nio-8080-exec-2] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:59:24.395  INFO 3896 --- [http-nio-8080-exec-2] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:59:24.399  INFO 3896 --- [http-nio-8080-exec-6] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:59:27.690  INFO 3896 --- [http-nio-8080-exec-9] c.b.controllers.CommentController        : Get Post By Category
+2022-07-26 14:59:27.690  INFO 3896 --- [http-nio-8080-exec-9] c.b.services.impl.UserServiceImpl        : Get post By Category Implementation
+2022-07-26 14:59:30.564  INFO 3896 --- [http-nio-8080-exec-8] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 14:59:30.565  INFO 3896 --- [http-nio-8080-exec-8] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 14:59:35.566  INFO 3896 --- [http-nio-8080-exec-3] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:59:35.566  INFO 3896 --- [http-nio-8080-exec-3] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:59:35.572  INFO 3896 --- [http-nio-8080-exec-7] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 14:59:48.826  INFO 3896 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : Get post By User Implementation
+2022-07-26 14:59:48.843  INFO 3896 --- [http-nio-8080-exec-1] c.b.controllers.CommentController        : Get Post By User
+2022-07-26 14:59:50.093  INFO 3896 --- [http-nio-8080-exec-4] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 14:59:50.093  INFO 3896 --- [http-nio-8080-exec-4] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 14:59:50.101  INFO 3896 --- [http-nio-8080-exec-5] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:00:35.291  WARN 3896 --- [http-nio-8080-exec-2] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:00:35.457  WARN 3896 --- [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authentication.InternalAuthenticationServiceException: user not found with email :abhi.srivastava7631@gmail.com : 0]
+2022-07-26 15:00:46.732  WARN 3896 --- [http-nio-8080-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authentication.InternalAuthenticationServiceException: user not found with email :abhi.srivastava7631@gmail.com : 0]
+2022-07-26 15:01:01.901  WARN 3896 --- [http-nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authentication.InternalAuthenticationServiceException: user not found with email :abhi.srivastava7631@gmail.com : 0]
+2022-07-26 15:01:17.575  WARN 3896 --- [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authentication.InternalAuthenticationServiceException: user not found with email :abhi.srivastava7631@gmail.com : 0]
+2022-07-26 15:02:39.196  WARN 3896 --- [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authentication.InternalAuthenticationServiceException: user not found with email :abhi.srivastava7631@gmail.com : 0]
+2022-07-26 15:02:52.443  WARN 3896 --- [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authentication.InternalAuthenticationServiceException: user not found with email :abhisheksrivastava@virtusa.com : 0]
+2022-07-26 15:04:17.857  INFO 16136 --- [restartedMain] com.blogapplication.BlogApplication      : Starting BlogApplication using Java 17.0.1 on DESKTOP-SDVVS5S with PID 16136 (C:\Users\HP\Downloads\blog-application\blog-application\target\classes started by HP in C:\Users\HP\Downloads\blog-application\blog-application)
+2022-07-26 15:04:17.860  INFO 16136 --- [restartedMain] com.blogapplication.BlogApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-07-26 15:04:17.961  INFO 16136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-07-26 15:04:17.961  INFO 16136 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-07-26 15:04:21.335  INFO 16136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-26 15:04:21.500  INFO 16136 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 148 ms. Found 5 JPA repository interfaces.
+2022-07-26 15:04:26.128  INFO 16136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-07-26 15:04:26.176  INFO 16136 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-07-26 15:04:26.176  INFO 16136 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-07-26 15:04:26.830  INFO 16136 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-07-26 15:04:26.830  INFO 16136 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8867 ms
+2022-07-26 15:04:28.942  INFO 16136 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-26 15:04:29.243  INFO 16136 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-07-26 15:04:30.078  INFO 16136 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-07-26 15:04:30.451  INFO 16136 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-07-26 15:04:31.945  INFO 16136 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-07-26 15:04:32.068  INFO 16136 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-07-26 15:04:34.745  INFO 16136 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-26 15:04:34.761  INFO 16136 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-26 15:04:36.263  WARN 16136 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-26 15:04:37.901  INFO 16136 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1055cd1c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@d9f3aa2, org.springframework.security.web.context.SecurityContextPersistenceFilter@55d3d323, org.springframework.security.web.header.HeaderWriterFilter@2e5db09c, org.springframework.security.web.authentication.logout.LogoutFilter@7ca2b05e, com.blogapplication.security.JwtAuthenticationFilter@40bada23, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@225881e0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7b326df8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@8f6cd41, org.springframework.security.web.session.SessionManagementFilter@7c0248a7, org.springframework.security.web.access.ExceptionTranslationFilter@61fc0c94, org.springframework.security.web.access.intercept.AuthorizationFilter@1890c724]
+2022-07-26 15:04:39.325  INFO 16136 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-07-26 15:04:39.348  INFO 16136 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2022-07-26 15:04:39.502  INFO 16136 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-07-26 15:04:39.529  INFO 16136 --- [restartedMain] com.blogapplication.BlogApplication      : Started BlogApplication in 22.461 seconds (JVM running for 24.407)
+2022-07-26 15:04:39.993  INFO 16136 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-26 15:04:39.994  INFO 16136 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-07-26 15:04:39.994  INFO 16136 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-07-26 15:04:40.049  WARN 16136 --- [http-nio-8080-exec-1] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:04:41.730  INFO 16136 --- [http-nio-8080-exec-2] c.b.services.impl.UserServiceImpl        : Register new User Implementation 
+2022-07-26 15:04:41.732  INFO 16136 --- [http-nio-8080-exec-2] c.b.controllers.AuthController           : admin@gmail.com
+2022-07-26 15:05:20.325  WARN 16136 --- [http-nio-8080-exec-6] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:05:20.455  INFO 16136 --- [http-nio-8080-exec-7] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:05:27.965  WARN 16136 --- [http-nio-8080-exec-9] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:05:28.018  INFO 16136 --- [http-nio-8080-exec-10] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:05:28.018  INFO 16136 --- [http-nio-8080-exec-10] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:05:40.606  WARN 16136 --- [http-nio-8080-exec-1] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:05:40.632  INFO 16136 --- [http-nio-8080-exec-2] c.b.controllers.CommentController        : Get Post By Category
+2022-07-26 15:05:40.635  INFO 16136 --- [http-nio-8080-exec-2] c.b.services.impl.UserServiceImpl        : Get post By Category Implementation
+2022-07-26 15:05:47.578  INFO 16136 --- [http-nio-8080-exec-4] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:05:47.578  INFO 16136 --- [http-nio-8080-exec-4] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:05:53.379  INFO 16136 --- [http-nio-8080-exec-3] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:05:53.380  INFO 16136 --- [http-nio-8080-exec-3] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:06:51.622  WARN 16136 --- [http-nio-8080-exec-5] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:06:51.867  INFO 16136 --- [http-nio-8080-exec-6] c.b.services.impl.UserServiceImpl        : create category Implementation
+2022-07-26 15:06:51.867  INFO 16136 --- [http-nio-8080-exec-6] c.b.controllers.CategoryController       : Creating categeory with name : India
+2022-07-26 15:07:04.063  INFO 16136 --- [http-nio-8080-exec-7] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:07:04.063  INFO 16136 --- [http-nio-8080-exec-7] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:07:11.915  WARN 16136 --- [http-nio-8080-exec-9] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:07:11.931  INFO 16136 --- [http-nio-8080-exec-10] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:07:11.931  INFO 16136 --- [http-nio-8080-exec-10] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:07:13.906  INFO 16136 --- [http-nio-8080-exec-1] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:07:13.906  INFO 16136 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:08:31.237  INFO 16136 --- [http-nio-8080-exec-4] c.b.controllers.CommentController        : Get Post By Category
+2022-07-26 15:08:31.238  INFO 16136 --- [http-nio-8080-exec-4] c.b.services.impl.UserServiceImpl        : Get post By Category Implementation
+2022-07-26 15:10:48.224  INFO 16136 --- [http-nio-8080-exec-5] c.b.controllers.CommentController        : Get Post By Category
+2022-07-26 15:10:48.225  INFO 16136 --- [http-nio-8080-exec-5] c.b.services.impl.UserServiceImpl        : Get post By Category Implementation
+2022-07-26 15:10:48.550  INFO 16136 --- [http-nio-8080-exec-7] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:10:48.551  INFO 16136 --- [http-nio-8080-exec-7] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:10:48.560  INFO 16136 --- [http-nio-8080-exec-6] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:10:48.611  INFO 16136 --- [http-nio-8080-exec-9] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 15:10:48.612  INFO 16136 --- [http-nio-8080-exec-9] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 15:10:48.628  INFO 16136 --- [http-nio-8080-exec-8] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:10:52.749  INFO 16136 --- [http-nio-8080-exec-3] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:10:52.749  INFO 16136 --- [http-nio-8080-exec-3] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:11:05.390  INFO 16136 --- [http-nio-8080-exec-6] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:11:05.416  INFO 16136 --- [http-nio-8080-exec-7] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 15:11:05.416  INFO 16136 --- [http-nio-8080-exec-7] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 15:11:05.659  INFO 16136 --- [http-nio-8080-exec-8] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:11:05.659  INFO 16136 --- [http-nio-8080-exec-8] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:11:33.373  INFO 16136 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : create category Implementation
+2022-07-26 15:11:33.373  INFO 16136 --- [http-nio-8080-exec-1] c.b.controllers.CategoryController       : Creating categeory with name : freedom fighter
+2022-07-26 15:11:33.469  INFO 16136 --- [http-nio-8080-exec-4] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:11:33.469  INFO 16136 --- [http-nio-8080-exec-4] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:11:37.182  INFO 16136 --- [http-nio-8080-exec-3] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:11:37.183  INFO 16136 --- [http-nio-8080-exec-3] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:11:39.567  INFO 16136 --- [http-nio-8080-exec-5] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:11:39.567  INFO 16136 --- [http-nio-8080-exec-5] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:12:14.582  WARN 16136 --- [http-nio-8080-exec-7] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:12:14.599  INFO 16136 --- [http-nio-8080-exec-8] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:12:14.599  INFO 16136 --- [http-nio-8080-exec-8] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:12:14.864  INFO 16136 --- [http-nio-8080-exec-2] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 15:12:14.864  INFO 16136 --- [http-nio-8080-exec-2] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 15:12:14.869  INFO 16136 --- [http-nio-8080-exec-9] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:12:15.838  INFO 16136 --- [http-nio-8080-exec-10] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:12:15.839  INFO 16136 --- [http-nio-8080-exec-10] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:12:15.844  INFO 16136 --- [http-nio-8080-exec-1] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:12:25.257  WARN 16136 --- [http-nio-8080-exec-6] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:12:25.274  INFO 16136 --- [http-nio-8080-exec-7] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:12:25.274  INFO 16136 --- [http-nio-8080-exec-7] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:12:25.317  INFO 16136 --- [http-nio-8080-exec-9] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:12:25.318  INFO 16136 --- [http-nio-8080-exec-9] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:12:25.319  INFO 16136 --- [http-nio-8080-exec-8] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:12:25.348  INFO 16136 --- [http-nio-8080-exec-2] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:12:25.364  INFO 16136 --- [http-nio-8080-exec-1] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 15:12:25.365  INFO 16136 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 15:12:26.864  INFO 16136 --- [http-nio-8080-exec-10] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:12:26.864  INFO 16136 --- [http-nio-8080-exec-10] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:12:26.869  INFO 16136 --- [http-nio-8080-exec-4] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:12:29.918  INFO 16136 --- [http-nio-8080-exec-2] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:12:29.919  INFO 16136 --- [http-nio-8080-exec-2] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:12:29.923  INFO 16136 --- [http-nio-8080-exec-8] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:12:29.959  INFO 16136 --- [http-nio-8080-exec-9] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:12:29.974  INFO 16136 --- [http-nio-8080-exec-1] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 15:12:29.974  INFO 16136 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 15:12:39.984  INFO 16136 --- [http-nio-8080-exec-5] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:12:39.986  INFO 16136 --- [http-nio-8080-exec-5] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:12:39.989  INFO 16136 --- [http-nio-8080-exec-7] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:12:41.931  WARN 16136 --- [http-nio-8080-exec-3] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:12:41.946  INFO 16136 --- [http-nio-8080-exec-6] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:12:41.946  INFO 16136 --- [http-nio-8080-exec-6] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:12:43.310  INFO 16136 --- [http-nio-8080-exec-8] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:12:43.310  INFO 16136 --- [http-nio-8080-exec-8] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:12:48.270  INFO 16136 --- [http-nio-8080-exec-2] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:12:48.271  INFO 16136 --- [http-nio-8080-exec-2] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:13:10.887  INFO 16136 --- [http-nio-8080-exec-7] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:13:10.890  INFO 16136 --- [http-nio-8080-exec-7] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:13:10.893  INFO 16136 --- [http-nio-8080-exec-10] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:13:10.919  INFO 16136 --- [http-nio-8080-exec-5] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:13:10.937  INFO 16136 --- [http-nio-8080-exec-3] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 15:13:10.937  INFO 16136 --- [http-nio-8080-exec-3] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 15:13:11.087  INFO 16136 --- [http-nio-8080-exec-6] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:13:11.087  INFO 16136 --- [http-nio-8080-exec-6] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:13:28.418  INFO 16136 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : create category Implementation
+2022-07-26 15:13:28.418  INFO 16136 --- [http-nio-8080-exec-1] c.b.controllers.CategoryController       : Creating categeory with name : Football
+2022-07-26 15:13:28.499  INFO 16136 --- [http-nio-8080-exec-4] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:13:28.501  INFO 16136 --- [http-nio-8080-exec-4] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:13:32.545  WARN 16136 --- [http-nio-8080-exec-10] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:13:32.562  INFO 16136 --- [http-nio-8080-exec-7] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:13:32.562  INFO 16136 --- [http-nio-8080-exec-7] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:13:34.413  INFO 16136 --- [http-nio-8080-exec-5] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:13:34.413  INFO 16136 --- [http-nio-8080-exec-5] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:13:41.223  WARN 16136 --- [http-nio-8080-exec-6] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:13:41.242  INFO 16136 --- [http-nio-8080-exec-8] c.b.controllers.CommentController        : Get Post By Category
+2022-07-26 15:13:41.242  INFO 16136 --- [http-nio-8080-exec-8] c.b.services.impl.UserServiceImpl        : Get post By Category Implementation
+2022-07-26 15:13:42.734  INFO 16136 --- [http-nio-8080-exec-9] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:13:42.734  INFO 16136 --- [http-nio-8080-exec-9] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:13:43.870  WARN 16136 --- [http-nio-8080-exec-2] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:13:43.884  INFO 16136 --- [http-nio-8080-exec-1] c.b.controllers.CommentController        : Get Post By Category
+2022-07-26 15:13:43.885  INFO 16136 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : Get post By Category Implementation
+2022-07-26 15:13:44.982  INFO 16136 --- [http-nio-8080-exec-4] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:13:44.983  INFO 16136 --- [http-nio-8080-exec-4] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:13:45.510  WARN 16136 --- [http-nio-8080-exec-10] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:13:45.528  INFO 16136 --- [http-nio-8080-exec-7] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 15:13:45.529  INFO 16136 --- [http-nio-8080-exec-7] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 15:13:48.186  INFO 16136 --- [http-nio-8080-exec-3] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:13:48.187  INFO 16136 --- [http-nio-8080-exec-3] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:13:50.451  INFO 16136 --- [http-nio-8080-exec-6] c.b.controllers.CommentController        : Get Post By Category
+2022-07-26 15:13:50.452  INFO 16136 --- [http-nio-8080-exec-6] c.b.services.impl.UserServiceImpl        : Get post By Category Implementation
+2022-07-26 15:13:54.296  INFO 16136 --- [http-nio-8080-exec-8] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:13:54.297  INFO 16136 --- [http-nio-8080-exec-8] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:13:54.311  INFO 16136 --- [http-nio-8080-exec-9] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:14:26.369  WARN 16136 --- [http-nio-8080-exec-10] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:14:26.623  INFO 16136 --- [http-nio-8080-exec-7] c.b.services.impl.UserServiceImpl        : create post Implemenation
+2022-07-26 15:14:26.625  INFO 16136 --- [http-nio-8080-exec-7] c.b.controllers.CommentController        : creating post
+2022-07-26 15:15:20.544  INFO 16136 --- [http-nio-8080-exec-5] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:15:20.544  INFO 16136 --- [http-nio-8080-exec-5] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:15:20.556  INFO 16136 --- [http-nio-8080-exec-3] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:16:01.309  INFO 16136 --- [http-nio-8080-exec-6] c.b.controllers.CommentController        : Get Post By Category
+2022-07-26 15:16:01.309  INFO 16136 --- [http-nio-8080-exec-6] c.b.services.impl.UserServiceImpl        : Get post By Category Implementation
+2022-07-26 15:16:01.524  INFO 16136 --- [http-nio-8080-exec-8] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:16:01.524  INFO 16136 --- [http-nio-8080-exec-8] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:16:01.531  INFO 16136 --- [http-nio-8080-exec-9] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:16:01.550  INFO 16136 --- [http-nio-8080-exec-2] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:16:01.581  INFO 16136 --- [http-nio-8080-exec-1] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 15:16:01.581  INFO 16136 --- [http-nio-8080-exec-1] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 15:16:05.887  INFO 16136 --- [http-nio-8080-exec-4] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:16:05.888  INFO 16136 --- [http-nio-8080-exec-4] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:16:05.890  INFO 16136 --- [http-nio-8080-exec-10] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:16:09.168  INFO 16136 --- [http-nio-8080-exec-7] c.b.controllers.CommentController        : Get Post By Category
+2022-07-26 15:16:09.168  INFO 16136 --- [http-nio-8080-exec-7] c.b.services.impl.UserServiceImpl        : Get post By Category Implementation
+2022-07-26 15:16:33.205  WARN 16136 --- [http-nio-8080-exec-3] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:16:33.218  INFO 16136 --- [http-nio-8080-exec-5] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 15:16:33.223  INFO 16136 --- [http-nio-8080-exec-5] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 15:16:35.356  INFO 16136 --- [http-nio-8080-exec-9] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 15:16:35.357  INFO 16136 --- [http-nio-8080-exec-9] c.b.services.impl.UserServiceImpl        : getAll post Implemenation
+2022-07-26 15:16:35.923  WARN 16136 --- [http-nio-8080-exec-2] c.b.security.JwtAuthenticationFilter     : Invalid Token,not start wth bearer
+2022-07-26 15:16:35.932  INFO 16136 --- [http-nio-8080-exec-8] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:16:35.934  INFO 16136 --- [http-nio-8080-exec-8] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:16:35.944  INFO 16136 --- [http-nio-8080-exec-1] c.b.controllers.AuthController           : Accessing current user
+2022-07-26 15:16:38.582  INFO 16136 --- [http-nio-8080-exec-6] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:16:38.582  INFO 16136 --- [http-nio-8080-exec-6] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:16:39.889  INFO 16136 --- [http-nio-8080-exec-10] c.b.controllers.CategoryController       : Get all categeory : 
+2022-07-26 15:16:39.889  INFO 16136 --- [http-nio-8080-exec-10] c.b.services.impl.UserServiceImpl        : Get All category Implementation
+2022-07-26 15:18:59.108  INFO 16136 --- [http-nio-8080-exec-5] c.b.controllers.CommentController        : Getting all Post
+2022-07-26 15:18:59.109  INFO 16136 --- [http-nio-8080-exec-5] c.b.services.impl.UserServiceImpl        : getAll post Implemenation

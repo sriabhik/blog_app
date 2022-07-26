@@ -11,7 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.DisabledException;
+
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,10 +21,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.blogapplication.entities.User;
 import com.blogapplication.exceptions.InvalidUser;
-import com.blogapplication.exceptions.ResourceNotFoundException;
 import com.blogapplication.payloads.JwtAuthRequest;
 import com.blogapplication.payloads.JwtAuthResponse;
 import com.blogapplication.payloads.UserDto;
@@ -60,12 +58,11 @@ public class AuthController {
 		
 	}
 	@PostMapping("/login")
-	public ResponseEntity<JwtAuthResponse> createToken(@RequestBody JwtAuthRequest request) throws Exception {
+	public ResponseEntity<JwtAuthResponse> createToken(@RequestBody JwtAuthRequest request) throws BadCredentialsException {
 	
 		try {
 			this.authenticate(request.getUsername(),request.getPassword());
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
+		} catch (BadCredentialsException e) {
 			logger.warn("credential Invalid");
 			throw new InvalidUser("username","password:");
 		}
@@ -76,11 +73,9 @@ public class AuthController {
 		return new ResponseEntity<JwtAuthResponse>(j,HttpStatus.OK);
 	}
 
-	private void authenticate(String username, String password) throws Exception {
+	private void authenticate(String username, String password){
 		try{
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username,password));
-        }catch (DisabledException e){
-            throw  new Exception("User Disabled"+e.getMessage());
         }
         catch (BadCredentialsException e){
             throw new InvalidUser("username","password:");

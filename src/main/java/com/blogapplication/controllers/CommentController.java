@@ -15,10 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.blogapplication.payloads.ApiResponse;
 import com.blogapplication.payloads.CommentDto;
-import com.blogapplication.payloads.PostDto;
 import com.blogapplication.services.CommentService;
 
 @RestController

@@ -4,3 +4,7 @@
 2022-07-07 00:02:54 [http-nio-9090-exec-10] INFO  : Accessing current user
 2022-07-07 00:02:54 [http-nio-9090-exec-1] INFO  : Getting all Post
 2022-07-07 00:02:54 [http-nio-9090-exec-1] INFO  : getAll post Implemenation
+2022-07-07 00:24:37 [RMI TCP Connection(48)-127.0.0.1] INFO  : Application shutdown requested.
+2022-07-07 00:24:37 [RMI TCP Connection(48)-127.0.0.1] INFO  : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-07-07 00:24:37 [RMI TCP Connection(48)-127.0.0.1] INFO  : HikariPool-1 - Shutdown initiated...
+2022-07-07 00:24:37 [RMI TCP Connection(48)-127.0.0.1] INFO  : HikariPool-1 - Shutdown completed.

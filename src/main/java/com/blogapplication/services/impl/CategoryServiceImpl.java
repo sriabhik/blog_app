@@ -14,12 +14,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.blogapplication.entities.Category;
-import com.blogapplication.entities.Post;
 import com.blogapplication.exceptions.ResourceNotFoundException;
 import com.blogapplication.payloads.CategoryDto;
 import com.blogapplication.payloads.CategoryResponse;
-import com.blogapplication.payloads.PostDto;
-import com.blogapplication.payloads.PostResponse;
 import com.blogapplication.repositories.CategoryRepo;
 import com.blogapplication.services.CategoryService;
 
@@ -32,7 +29,7 @@ public class CategoryServiceImpl implements CategoryService {
 	private ModelMapper modelMapper;
 	@Override
 	public CategoryDto createCateogry(CategoryDto categoryDto) {
-		// TODO Auto-generated method stub
+
 //		convert categorydto to category
 		Category cat = this.modelMapper.map(categoryDto, Category.class);
 		Category createdCat = this.categoryRepo.save(cat);
@@ -42,8 +39,8 @@ public class CategoryServiceImpl implements CategoryService {
 
 	@Override
 	public CategoryDto updateCateogry(CategoryDto categoryDto, Integer categoryId) {
-		// TODO Auto-generated method stub
-		Category cat = this.categoryRepo.findById(categoryId).orElseThrow(()-> new ResourceNotFoundException("Category","Category Id",categoryId));
+
+		Category cat = this.categoryRepo.findById(categoryId).orElseThrow(()-> new ResourceNotFoundException("Category ","Category ID",categoryId));
 		cat.setCategoryDescription(categoryDto.getCategoryDescription());
 		cat.setCategoryTitle(categoryDto.getCategoryTitle());
 		Category updatedCat = this.categoryRepo.save(cat);
@@ -53,8 +50,8 @@ public class CategoryServiceImpl implements CategoryService {
 
 	@Override
 	public void deleteCategory(Integer categoryId) {
-		// TODO Auto-generated method stub
-		Category cat = this.categoryRepo.findById(categoryId).orElseThrow(()-> new ResourceNotFoundException("Category","Category Id",categoryId));
+
+		Category cat = this.categoryRepo.findById(categoryId).orElseThrow(()-> new ResourceNotFoundException("Category " ,"Category ID",categoryId));
 		logger.info("delete category Implementation");
 		this.categoryRepo.delete(cat);
 	}
@@ -80,7 +77,7 @@ public class CategoryServiceImpl implements CategoryService {
 		Pageable p1 =  PageRequest.of(pageNumber,pageSize,sort);
 		Page<Category> pageCategory = this.categoryRepo.findAll(p1);
 		List<Category> category = pageCategory.getContent();
-		List<CategoryDto> categoryDtos = category.stream().map((p)->this.modelMapper.map(p, CategoryDto.class)).collect(Collectors.toList());
+		List<CategoryDto> categoryDtos = category.stream().map(p->this.modelMapper.map(p, CategoryDto.class)).collect(Collectors.toList());
 		CategoryResponse categoryResponse= new CategoryResponse();
 		categoryResponse.setContent(categoryDtos);
 		categoryResponse.setPageNumber(pageCategory.getNumber());

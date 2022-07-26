@@ -1,7 +1,5 @@
 package com.blogapplication.services;
 
-import java.util.List;
-
 import com.blogapplication.payloads.CategoryDto;
 import com.blogapplication.payloads.CategoryResponse;
 

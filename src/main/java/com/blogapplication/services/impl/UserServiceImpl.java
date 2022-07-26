@@ -15,8 +15,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.blogapplication.config.AppConstants;
-import com.blogapplication.controllers.AuthController;
-import com.blogapplication.entities.Post;
 import com.blogapplication.entities.Role;
 import com.blogapplication.entities.User;
 import com.blogapplication.exceptions.ResourceNotFoundException;
@@ -30,6 +28,7 @@ import com.blogapplication.services.UserService;
 public class UserServiceImpl implements UserService {
 
 	Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+	
 	@Autowired
 	private UserRepo userRepo;
 
@@ -41,6 +40,12 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private RoleRepo roleRepo;
+
+//	this constructor for mocking
+	public UserServiceImpl(UserRepo userRepo) {
+
+		this.userRepo= userRepo;
+	}
 
 	@Override
 	public UserDto createUser(UserDto userDto) {
@@ -113,12 +118,6 @@ public class UserServiceImpl implements UserService {
 
 	public User dtoToUser(UserDto userDto) {
 		User user = this.modelMapper.map(userDto, User.class);
-
-		// user.setId(userDto.getId());
-		// user.setName(userDto.getName());
-		// user.setEmail(userDto.getEmail());
-		// user.setAbout(userDto.getAbout());
-		// user.setPassword(userDto.getPassword());
 		return user;
 	}
 
@@ -136,7 +135,8 @@ public class UserServiceImpl implements UserService {
 		user.setPassword(this.passwordEncoder.encode(user.getPassword()));
 
 		// roles
-		Role role = this.roleRepo.findById(AppConstants.NORMAL_USER).get();
+
+		Role role = this.roleRepo.findById(AppConstants.ADMIN_USER).get();
 
 		user.getRoles().add(role);
 

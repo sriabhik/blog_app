@@ -24,7 +24,6 @@ import com.blogapplication.security.JwtAuthenticationFilter;
 @EnableGlobalMethodSecurity(prePostEnabled=true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
-	
 	@Autowired
 	private CustomUserDetailService customUserDetailService;
 	
@@ -41,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.disable()
 			
 			.authorizeHttpRequests()
-			.antMatchers("/api/auth/login","/api/auth/registerUser","/api/auth/current-user").permitAll()
+			.antMatchers("/api/auth/login","/api/auth/registerUser","/api/auth/current-user","/actuator/mappings","/actuator").permitAll()
 			.antMatchers(HttpMethod.OPTIONS).permitAll()
 			.antMatchers(HttpMethod.PUT).permitAll()
 			.antMatchers(HttpMethod.GET).permitAll()
@@ -61,10 +60,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(this.customUserDetailService).passwordEncoder(passwordEncoder());
 	}
-	
-	
+
 //BcryptPasswordEncoder
-	
 	@Bean 
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
@@ -73,7 +70,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Bean
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
-		// TODO Auto-generated method stub
 		return super.authenticationManagerBean();
 	}
 	

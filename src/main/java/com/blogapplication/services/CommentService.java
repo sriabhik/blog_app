@@ -3,7 +3,7 @@ package com.blogapplication.services;
 import java.util.List;
 
 import com.blogapplication.payloads.CommentDto;
-import com.blogapplication.payloads.PostDto;
+
 
 public interface CommentService {
 

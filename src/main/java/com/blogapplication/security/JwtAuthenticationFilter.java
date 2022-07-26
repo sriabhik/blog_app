@@ -7,6 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -26,14 +28,15 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 	
 	@Autowired
 	private UserDetailsService userDetailsService;
-	
+
+	 Logger loggers = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
 	 @Override
 	    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 	        //get Token   
 		 	final String requestTokenHeader = request.getHeader("Authorization");
 	        String username = null;
 	        String jwtToken = null;
-	        System.out.println(requestTokenHeader);
+
 	        if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
 	            //yes,token w/o bearer
 	            jwtToken = requestTokenHeader.substring(7);
@@ -48,7 +51,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 	            }
 	        } 
 	        else {
-	            System.out.println("Invalid Token,not start wth bearer");
+	        	loggers.warn("Invalid Token,not start wth bearer");
+
 	        }
 	        
 	        //validate
@@ -61,7 +65,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 	                SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthentication);
 	            } 
 	            else {
-	                System.out.println("Token is not valid");
+	            	loggers.warn("Token is not valid");
+
 	            }
 
 	        }
